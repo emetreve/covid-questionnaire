@@ -1,4 +1,4 @@
-import reactLogo from '../src/assets/react.svg';
+import reactLogo from '~/assets/react.svg';
 
 function App() {
   return (
