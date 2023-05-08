@@ -5,6 +5,7 @@
 @layer base {
     @font-face {
         font-family: BpgArial;
-        src: url("~/fonts/BpgArial.ttf") format("TTF");
+        font-weight: normal;
+        src: url("/assets/fonts/BpgArial.ttf") format("TTF");
     }
 }
