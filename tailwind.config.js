@@ -6,6 +6,9 @@ const config = {
       fontFamily: {
         BpgArial: ['BpgArial', 'sans-serif'],
       },
+      colors: {
+        'granular-white': '#FAF9F6',
+      },
     },
   },
   plugins: [],
