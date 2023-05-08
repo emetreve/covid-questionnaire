@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: BpgArial;
+        src: url("~/fonts/BpgArial.ttf") format("TTF");
+    }
+}
