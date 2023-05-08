@@ -1,9 +1,9 @@
-import { Landing } from '~/pages/Landing';
+import { RoutesLibrary } from '~/config';
 
 function App() {
   return (
     <>
-      <Landing />
+      <RoutesLibrary />
     </>
   );
 }
