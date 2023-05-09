@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-import { ROUTES } from '~/config';
-import { Landing, Identification } from '~/pages';
+import { ROUTES } from '@/config';
+import { Landing, Identification } from '@/pages';
 
 function RoutesLibrary() {
   return (

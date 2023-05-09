@@ -1,4 +1,4 @@
-import { RoutesLibrary } from '~/config';
+import { RoutesLibrary } from '@/config';
 
 function App() {
   return (
