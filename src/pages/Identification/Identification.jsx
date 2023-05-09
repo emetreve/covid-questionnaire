@@ -25,6 +25,12 @@ function Identification() {
             handleChange={handleChange}
             customClass='mb-12'
           />
+          <Input
+            name='email'
+            placeholder='fbi@redberry.ge'
+            label='მეილი*'
+            handleChange={handleChange}
+          />
         </div>
         <div>
           <img
