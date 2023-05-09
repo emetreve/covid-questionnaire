@@ -9,7 +9,7 @@ function FormTracker({ progress }) {
           className='h-8'
           alt='Redberry logo written'
         />
-        <p className='font-bold text-2xl'>{progress} / 4</p>
+        <p className='font-bold text-3xl font-anonymousPro'>{progress}/4</p>
       </div>
     </>
   );

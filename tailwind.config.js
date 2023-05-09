@@ -21,6 +21,7 @@ const config = {
     },
     fontFamily: {
       BpgArial: ['BpgArial', 'sans-serif'],
+      anonymousPro: ['Anonymous Pro'],
     },
     extend: {
       colors: {
