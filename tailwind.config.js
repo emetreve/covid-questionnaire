@@ -17,7 +17,7 @@ const config = {
     },
     animation: {
       'dissolve-logo': 'dissolveLandingLogo 0.8s forwards',
-      'text-drop': 'textDrop 1s forwards',
+      'text-drop': 'textDrop 1s ease-out 700ms forwards',
     },
     fontFamily: {
       BpgArial: ['BpgArial', 'sans-serif'],
