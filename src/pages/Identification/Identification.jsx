@@ -1,5 +1,6 @@
 import { FormTracker } from '@/components';
 import { Input } from './components';
+import { Illustration } from './components';
 
 function Identification() {
   function handleChange(e) {
@@ -41,11 +42,7 @@ function Identification() {
           </div>
         </div>
         <div>
-          <img
-            src='/assets/star-eyed-ones.png'
-            alt='two people with starry eyes'
-            className='scale-[165%] pr-28 pt-14'
-          />
+          <Illustration />
         </div>
       </div>
     </div>
