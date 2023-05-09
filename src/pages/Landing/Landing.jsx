@@ -1,4 +1,11 @@
+import { useNavigate } from 'react-router-dom';
+import { ROUTES } from '~/config';
+
 function Landing() {
+  const navigate = useNavigate();
+  function handleClick() {
+    navigate(ROUTES.IDENTIFICATION);
+  }
   return (
     <div className='flex flex-col justify-center items-center h-screen uppercase bg-granular-white'>
       <img
@@ -6,7 +13,7 @@ function Landing() {
         alt='Redberry logo'
         className='h-28 mb-16'
       />
-      <span className='text-center text-4xl'>
+      <span onClick={handleClick} className='text-center text-4xl'>
         <p>კითხვარის</p>
         <p>დაწყება</p>
       </span>
