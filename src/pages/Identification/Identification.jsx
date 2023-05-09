@@ -31,6 +31,14 @@ function Identification() {
             label='მეილი*'
             handleChange={handleChange}
           />
+          <div className='mt-28'>
+            <div className='w-60 mb-4'>
+              <hr className='border-1 border-black' />
+            </div>
+            <p className='text-gray-400'>
+              *-ით მონიშნული ველების შევსება <br /> სავალდებულოა
+            </p>
+          </div>
         </div>
         <div>
           <img
