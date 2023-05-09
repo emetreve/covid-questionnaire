@@ -7,12 +7,12 @@ function Landing() {
       <img
         src='/assets/logo.svg'
         alt='Redberry rocket'
-        className='mb-25 animate-dissolve-logo h-28 mb-16'
+        className='mb-[5rem] animate-dissolve-logo h-28'
       />
-      <div className='text-center h-20 relative w-60 overflow-y-hidden'>
+      <div className='text-center h-25 relative w-60 overflow-y-hidden'>
         <Link
           to={ROUTES.IDENTIFICATION}
-          className='animate-text-drop text-4xl opacity-0 font-bold relative custom-shadow'
+          className='animate-text-drop animation-delay-600 text-5xl opacity-0 font-bold relative custom-shadow'
         >
           კითხვარის დაწყება
         </Link>

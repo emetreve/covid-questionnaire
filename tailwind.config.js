@@ -9,9 +9,9 @@ const config = {
         '100%': { transform: 'scale(1)' },
       },
       textDrop: {
-        '0%': { top: '-5rem', opacity: 0.5 },
-        '50%': { top: '-5rem', opacity: 0.7 },
-        '75%': { top: '-5rem', opacity: 0.9 },
+        '0%': { top: '-6rem', opacity: 0.5 },
+        '50%': { top: '-6rem', opacity: 0.7 },
+        '75%': { top: '-6rem', opacity: 0.9 },
         '100%': { top: 0, opacity: 1 },
       },
     },
@@ -28,6 +28,6 @@ const config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animation-delay')],
 };
 export default config;
