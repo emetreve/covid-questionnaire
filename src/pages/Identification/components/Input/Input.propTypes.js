@@ -5,4 +5,5 @@ export const InputPropTypes = {
   placeholder: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
+  customClass: PropTypes.string,
 };

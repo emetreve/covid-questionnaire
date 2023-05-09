@@ -11,7 +11,7 @@ function FormTracker({ progress }) {
         />
         <p className='font-bold text-3xl font-anonymousPro'>{progress}/4</p>
       </div>
-      <hr className='border-1 border-black my-8' />
+      <hr className='border-[0.01rem] border-black my-6' />
     </>
   );
 }

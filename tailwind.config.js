@@ -26,6 +26,7 @@ const config = {
     extend: {
       colors: {
         'granular-white': '#FAF9F6',
+        black: '#232323',
       },
     },
   },
