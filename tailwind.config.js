@@ -19,10 +19,10 @@ const config = {
       'dissolve-logo': 'dissolveLandingLogo 0.7s forwards',
       'text-drop': 'textDrop 1s forwards',
     },
+    fontFamily: {
+      BpgArial: ['BpgArial', 'sans-serif'],
+    },
     extend: {
-      fontFamily: {
-        BpgArial: ['BpgArial', 'sans-serif'],
-      },
       colors: {
         'granular-white': '#FAF9F6',
       },

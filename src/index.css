@@ -9,3 +9,12 @@
         src: url("/assets/fonts/BpgArial.ttf") format("TTF");
     }
 }
+
+.custom-shadow {
+    letter-spacing: 1px;
+    font-variant-caps: all-petite-caps;
+}
+
+.custom-shadow:hover {
+    text-shadow: 2px 1.1px 1px #FAF9F6, 3px 1px 1px black;
+}

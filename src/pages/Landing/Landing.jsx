@@ -12,7 +12,7 @@ function Landing() {
       <div className='text-center h-20 relative w-60 overflow-y-hidden'>
         <Link
           to={ROUTES.IDENTIFICATION}
-          className='animate-text-drop text-3xl opacity-0 font-bold relative'
+          className='animate-text-drop text-4xl opacity-0 font-bold relative custom-shadow'
         >
           კითხვარის დაწყება
         </Link>
