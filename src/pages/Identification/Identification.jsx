@@ -1,7 +1,9 @@
+import { FormTracker } from '@/components';
+
 function Identification() {
   return (
-    <div className='flex flex-col justify-center items-center h-screen uppercase bg-granular-white'>
-      Identificaion page!
+    <div className='px-44 h-screen uppercase bg-granular-white'>
+      <FormTracker progress={1} />
     </div>
   );
 }

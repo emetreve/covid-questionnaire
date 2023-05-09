@@ -28,6 +28,6 @@ const config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animation-delay')],
+  plugins: [],
 };
 export default config;
