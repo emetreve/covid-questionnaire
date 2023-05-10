@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { FormDataContext } from '@/context';
 import { FormTracker } from '@/components';
 import { Illustration } from './components';
+import { Error } from '@/components';
 
 function Identification() {
   const { updateFormData } = useContext(FormDataContext);
@@ -47,7 +48,7 @@ function Identification() {
               placeholder='იოსებ'
               className='text-xl bg-transparent block pt-1 border border-black py-3 px-5 text-s w-full placeholder-black font-light'
             />
-            {errors?.name && <span>{errors.name.message}</span>}{' '}
+            {errors?.name && <Error content={errors.name.message} />}
           </div>
 
           <button type='submit'>
