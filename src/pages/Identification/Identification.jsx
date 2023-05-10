@@ -4,6 +4,7 @@ import { FormDataContext } from '@/context';
 import { FormTracker } from '@/components';
 import { Illustration } from './components';
 import { Error } from '@/components';
+import { useLocalStorage } from '@/hooks';
 
 function Identification() {
   const { updateFormData } = useContext(FormDataContext);
@@ -35,35 +36,9 @@ function Identification() {
     }
   }, [trigger]);
 
-  const name = useWatch({
-    control,
-    name: 'name',
-    defaultValue: localStorage.getItem('name') || '',
-  });
-
-  useEffect(() => {
-    localStorage.setItem('name', name);
-  }, [name]);
-
-  const surname = useWatch({
-    control,
-    name: 'surname',
-    defaultValue: localStorage.getItem('surname') || '',
-  });
-
-  useEffect(() => {
-    localStorage.setItem('surname', surname);
-  }, [surname]);
-
-  const email = useWatch({
-    control,
-    name: 'email',
-    defaultValue: localStorage.getItem('email') || '',
-  });
-
-  useEffect(() => {
-    localStorage.setItem('email', email);
-  }, [email]);
+  useLocalStorage('name', control);
+  useLocalStorage('surname', control);
+  useLocalStorage('email', control);
 
   const onSubmit = (input, value) => {
     //TODO update context data if validated.
