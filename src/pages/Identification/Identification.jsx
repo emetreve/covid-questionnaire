@@ -12,12 +12,23 @@ function Identification() {
     register,
     handleSubmit,
     formState: { errors },
+    control,
   } = useForm({
     defaultValues: {
-      name: '',
+      name: localStorage.getItem('name') || '',
     },
     mode: 'onChange',
   });
+
+  const name = useWatch({
+    control,
+    name: 'name',
+    defaultValue: localStorage.getItem('name') || '',
+  });
+
+  useEffect(() => {
+    localStorage.setItem('name', name);
+  }, [name]);
 
   const onSubmit = (input, value) => {
     updateFormData(input, value);
