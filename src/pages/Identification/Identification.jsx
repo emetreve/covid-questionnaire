@@ -14,7 +14,12 @@ function Identification() {
     watch,
     control,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      name: '',
+    },
+    mode: 'onChange',
+  });
 
   // const onSubmit = (data) => {
   //   updateFormData('form1', data);
@@ -44,7 +49,7 @@ function Identification() {
               placeholder='იოსებ'
               className='text-xl bg-transparent block mt-1 border border-black py-3 px-5 text-s w-full placeholder-black font-light'
             />
-            {errors.name && <span>{errors.name.message}</span>}{' '}
+            {errors?.name && <span>{errors.name.message}</span>}{' '}
           </div>
           {/* <Input
             {...register('name', { required: true })}
