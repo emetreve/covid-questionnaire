@@ -53,6 +53,7 @@ const config = {
         'granular-white': '#FAF9F6',
         black: '#232323',
         'yellow-eyes': '#D6D16E',
+        error: '#F15524',
       },
     },
   },
