@@ -1,7 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import { FormDataContext } from '@/context';
 
 function useIdentificationInputs() {
+  const { updateFormData } = useContext(FormDataContext);
+
   const {
     register,
     handleSubmit,
@@ -28,7 +31,7 @@ function useIdentificationInputs() {
     }
   }, [trigger]);
 
-  return { handleSubmit, register, errors };
+  return { handleSubmit, register, errors, updateFormData };
 }
 
 export default useIdentificationInputs;

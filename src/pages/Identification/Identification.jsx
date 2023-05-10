@@ -1,14 +1,11 @@
-import { useContext } from 'react';
-import { FormDataContext } from '@/context';
 import { FormTracker } from '@/components';
 import { Illustration } from './components';
 import { Error } from '@/components';
 import useIdentificationInputs from './useIdentificationInputs';
 
 function Identification() {
-  const { updateFormData } = useContext(FormDataContext);
-
-  const { handleSubmit, register, errors } = useIdentificationInputs();
+  const { handleSubmit, register, errors, updateFormData } =
+    useIdentificationInputs();
 
   const onSubmit = (input, value) => {
     //TODO update context data if validated.
