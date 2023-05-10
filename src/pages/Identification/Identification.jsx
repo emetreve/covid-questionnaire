@@ -13,12 +13,27 @@ function Identification() {
     handleSubmit,
     formState: { errors },
     control,
+    trigger,
   } = useForm({
     defaultValues: {
       name: localStorage.getItem('name') || '',
+      surname: localStorage.getItem('surname') || '',
+      email: localStorage.getItem('email') || '',
     },
     mode: 'onChange',
   });
+
+  useEffect(() => {
+    if (localStorage.getItem('name')) {
+      trigger('name');
+    }
+    if (localStorage.getItem('surname')) {
+      trigger('surname');
+    }
+    if (localStorage.getItem('email')) {
+      trigger('email');
+    }
+  }, []);
 
   const name = useWatch({
     control,
@@ -30,15 +45,33 @@ function Identification() {
     localStorage.setItem('name', name);
   }, [name]);
 
+  const surname = useWatch({
+    control,
+    name: 'surname',
+    defaultValue: localStorage.getItem('surname') || '',
+  });
+
+  useEffect(() => {
+    localStorage.setItem('surname', surname);
+  }, [surname]);
+
+  const email = useWatch({
+    control,
+    name: 'email',
+    defaultValue: localStorage.getItem('email') || '',
+  });
+
+  useEffect(() => {
+    localStorage.setItem('email', email);
+  }, [email]);
+
   const onSubmit = (input, value) => {
-    updateFormData(input, value);
-    localStorage.setItem(value, JSON.stringify(value));
+    //TODO update context data if validated.
   };
 
   return (
     <div className='px-44 h-screen uppercase bg-granular-white relative'>
       <FormTracker progress={1} />
-
       <div className='flex justify-between'>
         <form
           noValidate
@@ -59,9 +92,6 @@ function Identification() {
               })}
               id='name'
               placeholder='იოსებ'
-              defaultValue={
-                localStorage.getItem('name') && localStorage.getItem('name')
-              }
               className='text-xl bg-transparent block pt-1 border border-black py-3 px-5 text-s w-full placeholder-black font-light'
             />
             <div className='h-4'>
