@@ -1,5 +1,4 @@
 import { createContext, useState } from 'react';
-import { FormDataContextPropTypes } from './FormDataContext.propTypes';
 
 const FormDataContext = createContext();
 
@@ -16,7 +15,5 @@ function FormDataProvider({ children }) {
     </FormDataContext.Provider>
   );
 }
-
-FormDataProvider.propTypes = FormDataContextPropTypes;
 
 export { FormDataContext, FormDataProvider };

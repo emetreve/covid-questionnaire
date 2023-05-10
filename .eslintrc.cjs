@@ -14,5 +14,6 @@ module.exports = {
   rules: {
     'react-refresh/only-export-components': 'warn',
     'prettier/prettier': 'error',
+    'react/prop-types': 0,
   },
 };

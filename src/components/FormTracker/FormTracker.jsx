@@ -1,5 +1,3 @@
-import { FormTrackerPropTypes } from './FormTracker.propTypes';
-
 function FormTracker({ progress }) {
   return (
     <>
@@ -15,7 +13,5 @@ function FormTracker({ progress }) {
     </>
   );
 }
-
-FormTracker.propTypes = FormTrackerPropTypes;
 
 export default FormTracker;

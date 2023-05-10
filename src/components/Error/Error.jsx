@@ -1,5 +1,3 @@
-import { ErrorPropTypes } from './Error.propTypes';
-
 function Error({ content }) {
   return (
     <div>
@@ -7,7 +5,5 @@ function Error({ content }) {
     </div>
   );
 }
-
-Error.propTypes = ErrorPropTypes;
 
 export default Error;

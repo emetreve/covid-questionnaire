@@ -33,7 +33,7 @@ function Identification() {
     if (localStorage.getItem('email')) {
       trigger('email');
     }
-  }, []);
+  }, [trigger]);
 
   const name = useWatch({
     control,
