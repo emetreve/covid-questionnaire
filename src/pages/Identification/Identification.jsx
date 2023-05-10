@@ -1,44 +1,14 @@
-import { useContext, useEffect } from 'react';
-import { useForm, useWatch } from 'react-hook-form';
+import { useContext } from 'react';
 import { FormDataContext } from '@/context';
 import { FormTracker } from '@/components';
 import { Illustration } from './components';
 import { Error } from '@/components';
-import { useLocalStorage } from '@/hooks';
+import useIdentificationInputs from './useIdentificationInputs';
 
 function Identification() {
   const { updateFormData } = useContext(FormDataContext);
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    control,
-    trigger,
-  } = useForm({
-    defaultValues: {
-      name: localStorage.getItem('name') || '',
-      surname: localStorage.getItem('surname') || '',
-      email: localStorage.getItem('email') || '',
-    },
-    mode: 'onChange',
-  });
-
-  useEffect(() => {
-    if (localStorage.getItem('name')) {
-      trigger('name');
-    }
-    if (localStorage.getItem('surname')) {
-      trigger('surname');
-    }
-    if (localStorage.getItem('email')) {
-      trigger('email');
-    }
-  }, [trigger]);
-
-  useLocalStorage('name', control);
-  useLocalStorage('surname', control);
-  useLocalStorage('email', control);
+  const { handleSubmit, register, errors } = useIdentificationInputs();
 
   const onSubmit = (input, value) => {
     //TODO update context data if validated.
