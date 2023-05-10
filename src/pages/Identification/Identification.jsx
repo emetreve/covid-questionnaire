@@ -37,6 +37,9 @@ function Identification() {
               })}
               id='name'
               placeholder='იოსებ'
+              onKeyUpCapture={(e) =>
+                localStorage.setItem('name', e.target.value)
+              }
               className='text-xl bg-transparent block pt-1 border border-black py-3 px-5 text-s w-full placeholder-black font-light'
             />
             <div className='h-4'>
@@ -58,6 +61,9 @@ function Identification() {
               })}
               id='surname'
               placeholder='ჯუღაშვილი'
+              onKeyUpCapture={(e) =>
+                localStorage.setItem('surname', e.target.value)
+              }
               className='text-xl bg-transparent block pt-1 border border-black py-3 px-5 text-s w-full placeholder-black font-light'
             />
             <div className='h-4'>
@@ -79,6 +85,9 @@ function Identification() {
               })}
               id='email'
               placeholder='fbi@redberry.ge'
+              onKeyUpCapture={(e) =>
+                localStorage.setItem('email', e.target.value)
+              }
               className='text-xl bg-transparent block pt-1 border border-black py-3 px-5 text-s w-full placeholder-black font-light'
             />
             <div className='h-4'>

@@ -1,12 +1,11 @@
 import { useEffect } from 'react';
-import { useForm, useWatch } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 function useIdentificationInputs() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    control,
     trigger,
   } = useForm({
     defaultValues: {
@@ -28,36 +27,6 @@ function useIdentificationInputs() {
       trigger('email');
     }
   }, [trigger]);
-
-  const name = useWatch({
-    control,
-    name: 'name',
-    defaultValue: localStorage.getItem('name') || '',
-  });
-
-  useEffect(() => {
-    localStorage.setItem('name', name);
-  }, [name]);
-
-  const surname = useWatch({
-    control,
-    name: 'surname',
-    defaultValue: localStorage.getItem('surname') || '',
-  });
-
-  useEffect(() => {
-    localStorage.setItem('surname', surname);
-  }, [surname]);
-
-  const email = useWatch({
-    control,
-    name: 'email',
-    defaultValue: localStorage.getItem('email') || '',
-  });
-
-  useEffect(() => {
-    localStorage.setItem('email', email);
-  }, [email]);
 
   return { handleSubmit, register, errors };
 }
