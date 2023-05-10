@@ -31,7 +31,7 @@ function useIdentificationInputs() {
     }
   }, [trigger]);
 
-  return { handleSubmit, register, errors, updateFormData };
+  return { handleSubmit, register, errors, updateFormData, trigger };
 }
 
 export default useIdentificationInputs;

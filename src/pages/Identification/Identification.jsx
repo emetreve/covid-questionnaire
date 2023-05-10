@@ -4,7 +4,7 @@ import { Error } from '@/components';
 import useIdentificationInputs from './useIdentificationInputs';
 
 function Identification() {
-  const { handleSubmit, register, errors, updateFormData } =
+  const { handleSubmit, register, errors, updateFormData, trigger } =
     useIdentificationInputs();
 
   const onSubmit = (input, value) => {
@@ -31,12 +31,12 @@ function Identification() {
                   value: 2,
                   message: 'სახელის ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან',
                 },
+                onChange: (e) => {
+                  localStorage.setItem('name', e.target.value);
+                },
               })}
               id='name'
               placeholder='იოსებ'
-              onKeyUpCapture={(e) =>
-                localStorage.setItem('name', e.target.value)
-              }
               className='text-xl bg-transparent block pt-1 border border-black py-3 px-5 text-s w-full placeholder-black font-light'
             />
             <div className='h-4'>
@@ -55,12 +55,12 @@ function Identification() {
                   value: 2,
                   message: 'გვარის ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან',
                 },
+                onChange: (e) => {
+                  localStorage.setItem('surname', e.target.value);
+                },
               })}
               id='surname'
               placeholder='ჯუღაშვილი'
-              onKeyUpCapture={(e) =>
-                localStorage.setItem('surname', e.target.value)
-              }
               className='text-xl bg-transparent block pt-1 border border-black py-3 px-5 text-s w-full placeholder-black font-light'
             />
             <div className='h-4'>
@@ -79,12 +79,12 @@ function Identification() {
                   value: /^[A-Z0-9._%+-]+@redberry\.ge$/i,
                   message: 'მეილი უნდა მთავრდებოდეს @redberry.ge სუფიქსით',
                 },
+                onChange: (e) => {
+                  localStorage.setItem('email', e.target.value);
+                },
               })}
               id='email'
               placeholder='fbi@redberry.ge'
-              onKeyUpCapture={(e) =>
-                localStorage.setItem('email', e.target.value)
-              }
               className='text-xl bg-transparent block pt-1 border border-black py-3 px-5 text-s w-full placeholder-black font-light'
             />
             <div className='h-4'>
