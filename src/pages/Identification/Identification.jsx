@@ -4,12 +4,8 @@ import { Error } from '@/components';
 import useIdentificationInputs from './useIdentificationInputs';
 
 function Identification() {
-  const { handleSubmit, register, errors, updateFormData, trigger } =
+  const { handleSubmit, onSubmit, register, errors, updateFormData } =
     useIdentificationInputs();
-
-  const onSubmit = (input, value) => {
-    //TODO update context data if validated.
-  };
 
   return (
     <div className='px-44 h-screen uppercase bg-granular-white relative'>

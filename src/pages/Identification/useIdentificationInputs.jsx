@@ -31,7 +31,11 @@ function useIdentificationInputs() {
     }
   }, [trigger]);
 
-  return { handleSubmit, register, errors, updateFormData, trigger };
+  const onSubmit = (input, value) => {
+    //TODO update context data if validated.
+  };
+
+  return { handleSubmit, register, errors, updateFormData, trigger, onSubmit };
 }
 
 export default useIdentificationInputs;
