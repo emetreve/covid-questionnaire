@@ -1,8 +1,7 @@
 import { useContext } from 'react';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { FormDataContext } from '@/context';
 import { FormTracker } from '@/components';
-import { Input } from './components';
 import { Illustration } from './components';
 
 function Identification() {
@@ -21,14 +20,13 @@ function Identification() {
     mode: 'onChange',
   });
 
-  // const onSubmit = (data) => {
-  //   updateFormData('form1', data);
-  //   localStorage.setItem('form1', JSON.stringify(data));
-  // };
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (input, value) => {
+    updateFormData(input, value);
+    localStorage.setItem(value, JSON.stringify(value));
+  };
 
   return (
-    <div className='px-44 h-screen uppercase bg-granular-white'>
+    <div className='px-44 h-screen uppercase bg-granular-white relative'>
       <FormTracker progress={1} />
 
       <div className='flex justify-between'>
@@ -39,36 +37,28 @@ function Identification() {
             </label>
             <input
               {...register('name', {
-                required: 'Name is required',
+                required: 'სახელის ველი სავალდებულოა',
                 minLength: {
                   value: 2,
-                  message: 'Minimum 2 characters should be provided',
+                  message: 'სახელის ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან',
                 },
               })}
               id='name'
               placeholder='იოსებ'
-              className='text-xl bg-transparent block mt-1 border border-black py-3 px-5 text-s w-full placeholder-black font-light'
+              className='text-xl bg-transparent block pt-1 border border-black py-3 px-5 text-s w-full placeholder-black font-light'
             />
             {errors?.name && <span>{errors.name.message}</span>}{' '}
           </div>
-          {/* <Input
-            {...register('name', { required: true })}
-            name='name'
-            placeholder='იოსებ'
-            label='სახელი*'
-            customClass='mb-12'
-            error={errors.name && <span>Name is required</span>}
-          />
-          <Input
-            name='surname'
-            placeholder='ჯუღაშვილი'
-            label='გვარი*'
-            customClass='mb-12'
-          />
-          <Input name='email' placeholder='fbi@redberry.ge' label='მეილი*' /> */}
-          <input type='submit' />
 
-          <div className='mt-28'>
+          <button type='submit'>
+            <img
+              className='h-6 absolute bottom-24 left-[60rem]'
+              src='/assets/next-button-active.png'
+              alt='go to next page'
+            />
+          </button>
+
+          <div className='pt-28'>
             <div className='w-60 mb-4'>
               <hr className='border-1 border-black' />
             </div>
