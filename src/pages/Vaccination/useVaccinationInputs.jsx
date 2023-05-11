@@ -43,6 +43,12 @@ function useCovidInputs() {
   });
 
   const onSubmit = (data) => {
+    if (had_vaccine === 'კი') {
+      localStorage.removeItem('i_am_waiting');
+    }
+    if (had_vaccine === 'არა') {
+      localStorage.removeItem('vaccination_stage');
+    }
     updateFormData(data);
     navigate(ROUTES.ADVICE);
   };
