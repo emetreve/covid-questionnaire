@@ -47,7 +47,6 @@ function useCovidInputs() {
   });
 
   const onSubmit = (data) => {
-    console.log('pass');
     updateFormData(data);
     navigate(ROUTES.VACCINATION);
   };
