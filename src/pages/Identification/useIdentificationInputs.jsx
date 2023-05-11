@@ -34,12 +34,12 @@ function useIdentificationInputs() {
     }
   }, [trigger]);
 
-  const onSubmit = (input, value) => {
-    //TODO update context data if validated.
+  const onSubmit = (data) => {
+    updateFormData(data);
     navigate(ROUTES.COVID);
   };
 
-  return { handleSubmit, register, errors, updateFormData, trigger, onSubmit };
+  return { handleSubmit, register, errors, trigger, onSubmit };
 }
 
 export default useIdentificationInputs;

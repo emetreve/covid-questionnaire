@@ -4,7 +4,7 @@ import { Error } from '@/components';
 import useIdentificationInputs from './useIdentificationInputs';
 
 function Identification() {
-  const { handleSubmit, onSubmit, register, errors, updateFormData } =
+  const { handleSubmit, onSubmit, register, errors } =
     useIdentificationInputs();
 
   return (
