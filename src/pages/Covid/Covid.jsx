@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { ROUTES } from '@/config';
 import { FormTracker } from '@/components';
 import { Error } from '@/components';
 import { Illustration } from './components';
@@ -68,13 +70,22 @@ function Covid() {
               </div>
             </div>
           </div>
-          <button type='submit'>
-            <img
-              className='h-6 absolute bottom-24 left-[60rem] z-20'
-              src='/assets/next-button.png'
-              alt='go to next page'
-            />
-          </button>
+          <div>
+            <Link to={ROUTES.IDENTIFICATION}>
+              <img
+                className='h-6 absolute bottom-24 left-[56rem] z-20'
+                src='/assets/previous-button.png'
+                alt='go to previous page'
+              />
+            </Link>
+            <button type='submit'>
+              <img
+                className='h-6 absolute bottom-24 left-[64rem] z-20'
+                src='/assets/next-button.png'
+                alt='go to next page'
+              />
+            </button>
+          </div>
         </form>
         <div>
           <Illustration />
