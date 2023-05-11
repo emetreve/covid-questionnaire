@@ -14,6 +14,7 @@ function useCovidInputs() {
     formState: { errors },
     trigger,
     control,
+    setValue,
   } = useForm({
     defaultValues: {
       had_vaccine: localStorage.getItem('had_vaccine') || '',
@@ -45,9 +46,11 @@ function useCovidInputs() {
   const onSubmit = (data) => {
     if (had_vaccine === 'კი') {
       localStorage.removeItem('i_am_waiting');
+      setValue('i_am_waiting', '');
     }
     if (had_vaccine === 'არა') {
       localStorage.removeItem('vaccination_stage');
+      setValue('vaccination_stage', '');
     }
     updateFormData(data);
     navigate(ROUTES.ADVICE);
