@@ -4,7 +4,7 @@ import { Error } from '@/components';
 import useIdentificationInputs from './useIdentificationInputs';
 
 function Identification() {
-  const { handleSubmit, onSubmit, register, errors, updateFormData } =
+  const { handleSubmit, onSubmit, register, errors } =
     useIdentificationInputs();
 
   return (
@@ -17,50 +17,54 @@ function Identification() {
           className='w-[30rem] pt-3'
         >
           <div className='flex flex-col'>
-            <label htmlFor='name' className='text-xl mb-2'>
+            <label htmlFor='first_name' className='text-xl mb-2'>
               სახელი*
             </label>
             <input
-              {...register('name', {
+              {...register('first_name', {
                 required: 'სახელის ველი სავალდებულოა',
                 minLength: {
                   value: 2,
                   message: 'სახელის ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან',
                 },
                 onChange: (e) => {
-                  localStorage.setItem('name', e.target.value);
+                  localStorage.setItem('first_name', e.target.value);
                 },
               })}
-              id='name'
+              id='first_name'
               placeholder='იოსებ'
               className='text-xl bg-transparent block pt-1 border border-black py-3 px-5 text-s w-full placeholder-black font-light'
             />
             <div className='h-4'>
-              {errors?.name && <Error content={errors.name.message} />}
+              {errors?.first_name && (
+                <Error content={errors.first_name.message} />
+              )}
             </div>
           </div>
 
           <div className='flex flex-col pt-6'>
-            <label htmlFor='surname' className='text-xl mb-2'>
+            <label htmlFor='last_name' className='text-xl mb-2'>
               გვარი*
             </label>
             <input
-              {...register('surname', {
+              {...register('last_name', {
                 required: 'გვარის ველი სავალდებულოა',
                 minLength: {
                   value: 2,
                   message: 'გვარის ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან',
                 },
                 onChange: (e) => {
-                  localStorage.setItem('surname', e.target.value);
+                  localStorage.setItem('last_name', e.target.value);
                 },
               })}
-              id='surname'
+              id='last_name'
               placeholder='ჯუღაშვილი'
               className='text-xl bg-transparent block pt-1 border border-black py-3 px-5 text-s w-full placeholder-black font-light'
             />
             <div className='h-4'>
-              {errors?.surname && <Error content={errors.surname.message} />}
+              {errors?.last_name && (
+                <Error content={errors.last_name.message} />
+              )}
             </div>
           </div>
 
@@ -91,7 +95,7 @@ function Identification() {
           <button type='submit'>
             <img
               className='h-6 absolute bottom-24 left-[60rem]'
-              src='/assets/next-button-active.png'
+              src='/assets/next-button.png'
               alt='go to next page'
             />
           </button>

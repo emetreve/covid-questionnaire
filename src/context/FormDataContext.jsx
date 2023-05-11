@@ -5,8 +5,8 @@ const FormDataContext = createContext();
 function FormDataProvider({ children }) {
   const [formData, setFormData] = useState({});
 
-  const updateFormData = (key, value) => {
-    setFormData((prevState) => ({ ...prevState, [key]: value }));
+  const updateFormData = (data) => {
+    setFormData((prevState) => ({ ...prevState, data }));
   };
 
   return (

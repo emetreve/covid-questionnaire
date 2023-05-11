@@ -1,9 +1,12 @@
 import { useEffect, useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { FormDataContext } from '@/context';
+import { ROUTES } from '@/config';
 
 function useIdentificationInputs() {
   const { updateFormData } = useContext(FormDataContext);
+  const navigate = useNavigate();
 
   const {
     register,
@@ -12,30 +15,31 @@ function useIdentificationInputs() {
     trigger,
   } = useForm({
     defaultValues: {
-      name: localStorage.getItem('name') || '',
-      surname: localStorage.getItem('surname') || '',
+      first_name: localStorage.getItem('first_name') || '',
+      last_name: localStorage.getItem('last_name') || '',
       email: localStorage.getItem('email') || '',
     },
     mode: 'onChange',
   });
 
   useEffect(() => {
-    if (localStorage.getItem('name')) {
-      trigger('name');
+    if (localStorage.getItem('first_name')) {
+      trigger('first_name');
     }
-    if (localStorage.getItem('surname')) {
-      trigger('surname');
+    if (localStorage.getItem('last_name')) {
+      trigger('last_name');
     }
     if (localStorage.getItem('email')) {
       trigger('email');
     }
   }, [trigger]);
 
-  const onSubmit = (input, value) => {
-    //TODO update context data if validated.
+  const onSubmit = (data) => {
+    updateFormData(data);
+    navigate(ROUTES.COVID);
   };
 
-  return { handleSubmit, register, errors, updateFormData, trigger, onSubmit };
+  return { handleSubmit, register, errors, trigger, onSubmit };
 }
 
 export default useIdentificationInputs;

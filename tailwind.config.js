@@ -38,11 +38,29 @@ const config = {
           backgroundColor: '#D6D16E',
         },
       },
+      circle: {
+        '0%': {
+          left: '-1.875rem',
+          top: '12.5rem',
+          height: '4.688rem',
+          width: '38.875rem',
+        },
+        '50%': { borderRadius: '50%', top: '13rem' },
+        '100%': {
+          backgroundColor: '#DD3939',
+          borderRadius: '50%',
+          left: '-7.5rem',
+          top: '13.75rem',
+          height: '14.313rem',
+          width: '14.313rem',
+        },
+      },
     },
     animation: {
       'dissolve-logo': 'dissolveLandingLogo 0.8s forwards',
       'text-drop': 'textDrop 1s ease-out 700ms forwards',
       rect: 'rect 0.9s forwards',
+      circle: 'circle 0.8s forwards',
     },
     fontFamily: {
       BpgArial: ['BpgArial', 'sans-serif'],
