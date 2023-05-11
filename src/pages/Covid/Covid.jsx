@@ -146,18 +146,24 @@ function Covid() {
               />
               <input
                 {...register('antibodies.number', {
-                  valueAsNumber: true,
+                  pattern: {
+                    value: /^[0-9]+$/i,
+                    message: 'გთხოვთ ჩაწერეთ რიცხვი',
+                  },
                   onChange: (e) => {
                     localStorage.setItem('antibodies.number', e.target.value);
                   },
                 })}
-                type='number'
+                // type='number'
                 className='border mt-7 border-zinc-400 ml-6 bg-transparent px-[1.25rem] w-[32rem] text-lg h-14'
                 placeholder='ანტისხეულების რაოდენობა'
               />
+              {errors?.antibodies?.number && (
+                <Error content={errors.antibodies.number.message} />
+              )}
             </div>
           )}
-          {/* {had_antibody_test === 'არა' && had_covid === 'კი' && (
+          {had_antibody_test === 'არა' && had_covid === 'კი' && (
             <div className='text-[1.4em] pt-6'>
               <p className='font-bold mb-4'>
                 მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა
@@ -165,12 +171,20 @@ function Covid() {
               </p>
               <input
                 type='date'
-                {...register('covid_sickness_date')}
+                {...register('covid_sickness_date', {
+                  required: 'ველი სავალდებულოა',
+                  onChange: (e) => {
+                    localStorage.setItem('covid_sickness_date', e.target.value);
+                  },
+                })}
                 className='border mt-7 border-zinc-400 ml-6 bg-transparent px-[1.25rem] w-[32rem] text-lg h-14'
                 placeholder='რიცხვი'
               />
+              {errors?.covid_sickness_date && (
+                <Error content={errors.covid_sickness_date.message} />
+              )}
             </div>
-          )} */}
+          )}
           <div>
             <Link to={ROUTES.IDENTIFICATION}>
               <img

@@ -22,13 +22,17 @@ function useCovidInputs() {
         test_date: localStorage.getItem('antibodies.test_date') || '',
         number: localStorage.getItem('antibodies.number') || '',
       },
+      covid_sickness_date: localStorage.getItem('covid_sickness_date') || '',
     },
     mode: 'onChange',
   });
 
   useEffect(() => {
-    if (localStorage.getItem('had_covid')) {
-      trigger('had_covid');
+    if (localStorage.getItem('antibodies.number')) {
+      trigger('antibodies.number');
+    }
+    if (localStorage.getItem('covid_sickness_date')) {
+      trigger('covid_sickness_date');
     }
   }, [trigger]);
 
