@@ -95,7 +95,7 @@ function Identification() {
           <button type='submit'>
             <img
               className='h-6 absolute bottom-24 left-[60rem]'
-              src='/assets/next-button-active.png'
+              src='/assets/next-button.png'
               alt='go to next page'
             />
           </button>
