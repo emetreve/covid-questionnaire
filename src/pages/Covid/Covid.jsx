@@ -154,7 +154,6 @@ function Covid() {
                     localStorage.setItem('antibodies.number', e.target.value);
                   },
                 })}
-                // type='number'
                 className='border mt-7 border-zinc-400 ml-6 bg-transparent px-[1.25rem] w-[32rem] text-lg h-14'
                 placeholder='ანტისხეულების რაოდენობა'
               />
