@@ -6,7 +6,8 @@ import { Illustration } from './components';
 import useCovidInputs from './useCovidInputs';
 
 function Covid() {
-  const { handleSubmit, onSubmit, register, errors } = useCovidInputs();
+  const { handleSubmit, onSubmit, register, errors, had_covid } =
+    useCovidInputs();
   return (
     <div className='px-44 h-screen uppercase bg-granular-white relative'>
       <FormTracker progress={2} />
@@ -14,7 +15,7 @@ function Covid() {
         <form
           noValidate
           onSubmit={handleSubmit(onSubmit)}
-          className='w-[30rem] pt-3'
+          className='w-[32rem] pt-3'
         >
           <div className='text-[1.4em]'>
             <p className='font-bold mb-4'>გაქვს გადატანილი Covid-19?*</p>
@@ -70,6 +71,53 @@ function Covid() {
               </div>
             </div>
           </div>
+          {had_covid === 'კი' && (
+            <div className='text-[1.4em] pt-10'>
+              <p className='font-bold mb-4'>
+                ანტისხეულების ტესტი გაქვს გაკეთებული?*
+              </p>
+              <div className='ml-6 '>
+                <div className='flex items-center mb-[1.25rem]'>
+                  <label htmlFor='option1'>
+                    <input
+                      type='radio'
+                      name='had_antibody_test'
+                      id='option1'
+                      value='კი'
+                      {...register('had_antibody_test', {
+                        onChange: (e) => {
+                          localStorage.setItem(
+                            'had_antibody_test',
+                            e.target.value
+                          );
+                        },
+                      })}
+                    />
+                    კი
+                  </label>
+                </div>
+                <div className='flex items-center mb-[1.25rem]'>
+                  <label htmlFor='option2'>
+                    <input
+                      type='radio'
+                      name='had_antibody_test'
+                      id='option2'
+                      value='არა'
+                      {...register('had_antibody_test', {
+                        onChange: (e) => {
+                          localStorage.setItem(
+                            'had_antibody_test',
+                            e.target.value
+                          );
+                        },
+                      })}
+                    />
+                    არა
+                  </label>
+                </div>
+              </div>
+            </div>
+          )}
           <div>
             <Link to={ROUTES.IDENTIFICATION}>
               <img
