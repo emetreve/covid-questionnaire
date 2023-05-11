@@ -17,6 +17,11 @@ function useCovidInputs() {
   } = useForm({
     defaultValues: {
       had_covid: localStorage.getItem('had_covid') || '',
+      had_antibody_test: localStorage.getItem('had_antibody_test') || '',
+      antibodies: {
+        test_date: localStorage.getItem('antibodies.test_date') || '',
+        number: localStorage.getItem('antibodies.number') || '',
+      },
     },
     mode: 'onChange',
   });
@@ -32,13 +37,26 @@ function useCovidInputs() {
     name: 'had_covid',
   });
 
+  const had_antibody_test = useWatch({
+    control,
+    name: 'had_antibody_test',
+  });
+
   const onSubmit = (data) => {
     console.log('pass');
     updateFormData(data);
     navigate(ROUTES.VACCINATION);
   };
 
-  return { handleSubmit, register, errors, trigger, onSubmit, had_covid };
+  return {
+    handleSubmit,
+    register,
+    errors,
+    trigger,
+    onSubmit,
+    had_covid,
+    had_antibody_test,
+  };
 }
 
 export default useCovidInputs;
