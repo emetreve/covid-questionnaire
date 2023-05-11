@@ -14,6 +14,7 @@ function useCovidInputs() {
     formState: { errors },
     trigger,
     control,
+    setValue,
   } = useForm({
     defaultValues: {
       had_covid: localStorage.getItem('had_covid') || '',
@@ -47,6 +48,29 @@ function useCovidInputs() {
   });
 
   const onSubmit = (data) => {
+    if (had_covid === 'ახლა მაქვს' || had_covid === 'არა') {
+      localStorage.removeItem('had_antibody_test');
+      setValue('had_antibody_test', '');
+      localStorage.removeItem('covid_sickness_date');
+      setValue('covid_sickness_date', '');
+      localStorage.removeItem('antibodies.test_date');
+      setValue('antibodies.test_date', '');
+      localStorage.removeItem('antibodies.number');
+      setValue('antibodies.number', '');
+    }
+
+    if (had_antibody_test === 'კი') {
+      localStorage.removeItem('covid_sickness_date');
+      setValue('covid_sickness_date', '');
+    }
+
+    if (had_antibody_test === 'არა') {
+      localStorage.removeItem('antibodies.test_date');
+      setValue('antibodies.test_date', '');
+      localStorage.removeItem('antibodies.number');
+      setValue('antibodies.number', '');
+    }
+
     updateFormData(data);
     navigate(ROUTES.VACCINATION);
   };
