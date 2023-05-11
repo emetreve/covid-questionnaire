@@ -85,6 +85,7 @@ function Covid() {
                       id='option1'
                       value='კი'
                       {...register('had_antibody_test', {
+                        required: true,
                         onChange: (e) => {
                           localStorage.setItem(
                             'had_antibody_test',
