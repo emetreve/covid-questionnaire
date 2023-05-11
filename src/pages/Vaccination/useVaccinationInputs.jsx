@@ -18,6 +18,7 @@ function useCovidInputs() {
     defaultValues: {
       had_vaccine: localStorage.getItem('had_vaccine') || '',
       vaccination_stage: localStorage.getItem('vaccination_stage') || '',
+      i_am_waiting: localStorage.getItem('i_am_waiting') || '',
     },
     mode: 'onChange',
   });
@@ -29,6 +30,16 @@ function useCovidInputs() {
   const had_vaccine = useWatch({
     control,
     name: 'had_vaccine',
+  });
+
+  const vaccination_stage = useWatch({
+    control,
+    name: 'vaccination_stage',
+  });
+
+  const i_am_waiting = useWatch({
+    control,
+    name: 'i_am_waiting',
   });
 
   const onSubmit = (data) => {
@@ -43,6 +54,8 @@ function useCovidInputs() {
     trigger,
     onSubmit,
     had_vaccine,
+    vaccination_stage,
+    i_am_waiting,
   };
 }
 
