@@ -62,7 +62,7 @@ const config = {
           height: '90px',
           opacity: 0.2,
         },
-        '25%': {
+        '50%': {
           top: '16rem',
           left: '-7rem',
           height: '150px',
@@ -83,6 +83,7 @@ const config = {
       circle: 'circle 0.6s forwards',
       star: 'star 0.9s forwards',
     },
+
     fontFamily: {
       BpgArial: ['BpgArial', 'sans-serif'],
       anonymousPro: ['Anonymous Pro'],

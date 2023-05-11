@@ -3,7 +3,7 @@ const ROUTES = {
   IDENTIFICATION: '/identification',
   COVID: '/covid',
   VACCINATION: '/vaccination',
-  ADVICE: '/feedback',
+  ADVICE: '/advice',
   THANK_YOU: '/thank-you',
   NOT_FOUND: '/not-found',
 };
