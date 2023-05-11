@@ -55,12 +55,33 @@ const config = {
           width: '14.313rem',
         },
       },
+      star: {
+        '0%': {
+          top: '28rem',
+          left: '-9rem',
+          height: '90px',
+          opacity: 0.2,
+        },
+        '25%': {
+          top: '16rem',
+          left: '-7rem',
+          height: '150px',
+          opacity: 0.8,
+        },
+        '100%': {
+          top: '2rem',
+          left: '-6rem',
+          height: '260px',
+          opacity: 1,
+        },
+      },
     },
     animation: {
       'dissolve-logo': 'dissolveLandingLogo 0.8s forwards',
       'text-drop': 'textDrop 1s ease-out 700ms forwards',
-      rect: 'rect 0.9s forwards',
-      circle: 'circle 0.8s forwards',
+      rect: 'rect 0.8s forwards',
+      circle: 'circle 0.6s forwards',
+      star: 'star 0.9s forwards',
     },
     fontFamily: {
       BpgArial: ['BpgArial', 'sans-serif'],
