@@ -64,7 +64,7 @@ const config = {
           height: '14.313rem',
           width: '9.3rem',
         },
-        '50%': { borderRadius: '50%', top: '12rem' },
+        '50%': { borderRadius: '50%', top: '10rem' },
         '100%': {
           left: '-2.875rem',
           top: '8.5rem',
