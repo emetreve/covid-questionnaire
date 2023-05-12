@@ -37,15 +37,12 @@ function useCovidInputs() {
     }
   }, [trigger]);
 
-  const had_covid = useWatch({
+  const watchedFields = useWatch({
     control,
-    name: 'had_covid',
+    name: ['had_covid', 'had_antibody_test'],
   });
 
-  const had_antibody_test = useWatch({
-    control,
-    name: 'had_antibody_test',
-  });
+  const [had_covid, had_antibody_test] = watchedFields;
 
   const onSubmit = (data) => {
     if (had_covid === 'ახლა მაქვს' || had_covid === 'არა') {
