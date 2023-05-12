@@ -55,6 +55,23 @@ const config = {
           width: '14.313rem',
         },
       },
+      'circle-reverse': {
+        '0%': {
+          backgroundColor: '#DD3939',
+          borderRadius: '50%',
+          left: '-8.5rem',
+          top: '13.75rem',
+          height: '14.313rem',
+          width: '9.3rem',
+        },
+        '50%': { borderRadius: '50%', top: '12rem' },
+        '100%': {
+          left: '-2.875rem',
+          top: '8.5rem',
+          height: '3.6rem',
+          width: '30.8rem',
+        },
+      },
       star: {
         '0%': {
           top: '28rem',
@@ -81,6 +98,7 @@ const config = {
       'text-drop': 'textDrop 1s ease-out 700ms forwards',
       rect: 'rect 0.8s forwards',
       circle: 'circle 0.6s forwards',
+      'circle-reverse': 'circle-reverse 0.6s backwards',
       star: 'star 0.9s forwards',
     },
 
