@@ -113,7 +113,7 @@ function Identification() {
           </div>
         </form>
         <div>
-          <Illustration state={state} />
+          <Illustration state />
         </div>
       </div>
     </div>
