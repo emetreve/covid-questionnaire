@@ -55,13 +55,53 @@ const config = {
           width: '14.313rem',
         },
       },
+      'circle-reverse': {
+        '0%': {
+          backgroundColor: '#DD3939',
+          borderRadius: '50%',
+          left: '-8.5rem',
+          top: '13.75rem',
+          height: '14.313rem',
+          width: '9.3rem',
+        },
+        '50%': { borderRadius: '50%', top: '10rem' },
+        '100%': {
+          left: '-2.875rem',
+          top: '8.5rem',
+          height: '3.6rem',
+          width: '30.8rem',
+        },
+      },
+      star: {
+        '0%': {
+          top: '28rem',
+          left: '-9rem',
+          height: '90px',
+          opacity: 0.2,
+        },
+        '50%': {
+          top: '16rem',
+          left: '-7rem',
+          height: '150px',
+          opacity: 0.8,
+        },
+        '100%': {
+          top: '2rem',
+          left: '-6rem',
+          height: '260px',
+          opacity: 1,
+        },
+      },
     },
     animation: {
       'dissolve-logo': 'dissolveLandingLogo 0.8s forwards',
       'text-drop': 'textDrop 1s ease-out 700ms forwards',
-      rect: 'rect 0.9s forwards',
-      circle: 'circle 0.8s forwards',
+      rect: 'rect 0.8s forwards',
+      circle: 'circle 0.6s forwards',
+      'circle-reverse': 'circle-reverse 0.6s backwards',
+      star: 'star 0.9s forwards',
     },
+
     fontFamily: {
       BpgArial: ['BpgArial', 'sans-serif'],
       anonymousPro: ['Anonymous Pro'],

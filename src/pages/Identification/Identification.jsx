@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import { FormTracker } from '@/components';
 import { Illustration } from './components';
 import { Error } from '@/components';
@@ -6,6 +7,8 @@ import useIdentificationInputs from './useIdentificationInputs';
 function Identification() {
   const { handleSubmit, onSubmit, register, errors } =
     useIdentificationInputs();
+
+  const { state } = useLocation();
 
   return (
     <div className='px-44 h-screen uppercase bg-granular-white relative'>
@@ -110,7 +113,7 @@ function Identification() {
           </div>
         </form>
         <div>
-          <Illustration />
+          <Illustration backwards={state} />
         </div>
       </div>
     </div>

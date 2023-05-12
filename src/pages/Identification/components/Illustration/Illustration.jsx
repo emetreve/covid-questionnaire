@@ -1,4 +1,4 @@
-function Illustration() {
+function Illustration({ backwards }) {
   return (
     <div className='relative'>
       <img
@@ -7,6 +7,7 @@ function Illustration() {
         className='scale-[165%] mr-28 pt-14 relative z-10'
       />
       <div className='absolute animate-rect bg-yellow-eyes' />
+      {backwards && <div className='absolute animate-circle-reverse' />}
     </div>
   );
 }
