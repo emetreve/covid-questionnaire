@@ -113,7 +113,7 @@ function Identification() {
           </div>
         </form>
         <div>
-          <Illustration state />
+          <Illustration backwards={state} />
         </div>
       </div>
     </div>
