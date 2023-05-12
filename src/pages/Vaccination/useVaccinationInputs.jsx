@@ -24,10 +24,6 @@ function useCovidInputs() {
     mode: 'onChange',
   });
 
-  useEffect(() => {
-    //TODO trigger needed question errors
-  }, [trigger]);
-
   const had_vaccine = useWatch({
     control,
     name: 'had_vaccine',
