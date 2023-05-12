@@ -24,20 +24,12 @@ function useCovidInputs() {
     mode: 'onChange',
   });
 
-  const had_vaccine = useWatch({
+  const watchedFields = useWatch({
     control,
-    name: 'had_vaccine',
+    name: ['had_vaccine', 'vaccination_stage', 'i_am_waiting'],
   });
 
-  const vaccination_stage = useWatch({
-    control,
-    name: 'vaccination_stage',
-  });
-
-  const i_am_waiting = useWatch({
-    control,
-    name: 'i_am_waiting',
-  });
+  const [had_vaccine, vaccination_stage, i_am_waiting] = watchedFields;
 
   const onSubmit = (data) => {
     if (had_vaccine === 'კი') {
