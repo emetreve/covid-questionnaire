@@ -9,7 +9,7 @@ function Illustration() {
       <img
         src='/assets/star.png'
         alt='star'
-        className='absolute animate-star opacity-0'
+        className='absolute animate-star'
       />
     </div>
   );
