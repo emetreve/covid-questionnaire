@@ -1,5 +1,5 @@
 import { ROUTES } from '@/config';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { FormTracker } from '@/components';
 import { Error } from '@/components';
 import { Illustration } from './components';
@@ -14,7 +14,10 @@ function Covid() {
     had_covid,
     had_antibody_test,
   } = useCovidInputs();
+
   const navigate = useNavigate();
+  const { state } = useLocation();
+
   return (
     <div className='px-44 h-screen uppercase bg-granular-white relative'>
       <FormTracker progress={2} />
@@ -206,7 +209,7 @@ function Covid() {
           </div>
         </form>
         <div>
-          <Illustration />
+          <Illustration backwards={state} />
         </div>
       </div>
     </div>

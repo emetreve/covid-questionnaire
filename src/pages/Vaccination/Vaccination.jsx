@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '@/config';
 import { FormTracker } from '@/components';
 import { Illustration } from './components';
@@ -13,6 +13,9 @@ function Vaccinaton() {
     vaccination_stage,
     i_am_waiting,
   } = useVaccinationInputs();
+
+  const navigate = useNavigate();
+
   return (
     <div className='px-44 h-screen uppercase bg-granular-white relative'>
       <FormTracker progress={3} />
@@ -212,13 +215,16 @@ function Vaccinaton() {
             </div>
           )}
           <div>
-            <Link to={ROUTES.COVID}>
-              <img
-                className='h-6 absolute bottom-24 left-[56rem] z-20'
-                src='/assets/previous-button.png'
-                alt='go to previous page'
-              />
-            </Link>
+            <img
+              className='h-6 absolute bottom-24 left-[56rem] z-20'
+              src='/assets/previous-button.png'
+              alt='go to previous page'
+              onClick={() => {
+                navigate(`${ROUTES.COVID}`, {
+                  state: { back: true },
+                });
+              }}
+            />
             <button type='submit'>
               <img
                 className='h-6 absolute bottom-24 left-[64rem] z-20'

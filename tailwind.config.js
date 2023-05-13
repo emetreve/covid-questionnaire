@@ -104,6 +104,20 @@ const config = {
           height: '9rem',
         },
       },
+      'star-to-circle': {
+        '0%': {
+          top: '2rem',
+          left: '-6rem',
+          height: '16.25rem',
+          opacity: 1,
+        },
+        '100%': {
+          top: '20rem',
+          left: '-5rem',
+          height: '9.5rem',
+          opacity: 0,
+        },
+      },
     },
     animation: {
       'dissolve-logo': 'dissolveLandingLogo 0.8s forwards',
@@ -113,6 +127,7 @@ const config = {
       'circle-reverse': 'circle-reverse 0.6s backwards',
       star: 'star 0.9s forwards',
       'circle-to-star': 'circle-to-star 1s backwards',
+      'star-to-circle': 'star-to-circle 1s forwards',
     },
 
     fontFamily: {
