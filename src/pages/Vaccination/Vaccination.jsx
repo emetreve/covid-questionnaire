@@ -74,7 +74,7 @@ function Vaccinaton() {
                       type='radio'
                       name='vaccination_stage'
                       id='option1'
-                      value='პირველი დოზა და დარეგისტრირებული ვარ მეორეზე'
+                      value='first_dosage_and_registered_on_the_second'
                       {...register('vaccination_stage', {
                         required: true,
                         onChange: (e) => {
@@ -94,7 +94,7 @@ function Vaccinaton() {
                       type='radio'
                       name='vaccination_stage'
                       id='option2'
-                      value='სრულად აცრილი ვარ'
+                      value='fully_vaccinated'
                       {...register('vaccination_stage', {
                         onChange: (e) => {
                           localStorage.setItem(
@@ -113,7 +113,7 @@ function Vaccinaton() {
                       type='radio'
                       name='vaccination_stage'
                       id='option3'
-                      value='პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე'
+                      value='first_dosage_and_not_registered_yet'
                       {...register('vaccination_stage', {
                         onChange: (e) => {
                           localStorage.setItem(
@@ -154,7 +154,7 @@ function Vaccinaton() {
                       type='radio'
                       name='i_am_waiting'
                       id='option1'
-                      value='დარეგისტრირებული ვარ და ველოდები რიცხვს'
+                      value='registered_and_waiting'
                       {...register('i_am_waiting', {
                         required: true,
                         onChange: (e) => {
@@ -171,7 +171,7 @@ function Vaccinaton() {
                       type='radio'
                       name='i_am_waiting'
                       id='option2'
-                      value='არ ვგეგმავ'
+                      value='not_planning'
                       {...register('i_am_waiting', {
                         onChange: (e) => {
                           localStorage.setItem('i_am_waiting', e.target.value);
@@ -187,7 +187,7 @@ function Vaccinaton() {
                       type='radio'
                       name='i_am_waiting'
                       id='option3'
-                      value='გადატანილი მაქვს და ვგეგმავ აცრას'
+                      value='had_covid_and_planning_to_be_vaccinated'
                       {...register('i_am_waiting', {
                         onChange: (e) => {
                           localStorage.setItem('i_am_waiting', e.target.value);

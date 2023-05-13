@@ -36,7 +36,7 @@ function Covid() {
                     type='radio'
                     name='had_covid'
                     id='option1'
-                    value='კი'
+                    value='yes'
                     {...register('had_covid', {
                       required: true,
                       onChange: (e) => {
@@ -53,7 +53,7 @@ function Covid() {
                     type='radio'
                     name='had_covid'
                     id='option2'
-                    value='არა'
+                    value='no'
                     {...register('had_covid', {
                       onChange: (e) => {
                         localStorage.setItem('had_covid', e.target.value);
@@ -69,7 +69,7 @@ function Covid() {
                     type='radio'
                     name='had_covid'
                     id='option3'
-                    value='ახლა მაქვს'
+                    value='have_right_now'
                     {...register('had_covid', {
                       onChange: (e) => {
                         localStorage.setItem('had_covid', e.target.value);

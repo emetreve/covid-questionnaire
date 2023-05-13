@@ -41,7 +41,7 @@ function Advice() {
                     type='radio'
                     name='non_formal_meetings'
                     id='option1'
-                    value='კვირაში ორჯერ'
+                    value='twice_a_week'
                     {...register('non_formal_meetings', {
                       required: true,
                       onChange: (e) => {
@@ -61,7 +61,7 @@ function Advice() {
                     type='radio'
                     name='non_formal_meetings'
                     id='option2'
-                    value='კვირაში ერთხელ'
+                    value='once_a_week'
                     {...register('non_formal_meetings', {
                       onChange: (e) => {
                         localStorage.setItem(
@@ -80,7 +80,7 @@ function Advice() {
                     type='radio'
                     name='non_formal_meetings'
                     id='option3'
-                    value='ორ კვირაში ერთხელ'
+                    value='once_in_a_two_weeks'
                     {...register('non_formal_meetings', {
                       onChange: (e) => {
                         localStorage.setItem(
@@ -99,7 +99,7 @@ function Advice() {
                     type='radio'
                     name='non_formal_meetings'
                     id='option4'
-                    value='თვეში ერთხელ'
+                    value='once_in_a_month'
                     {...register('non_formal_meetings', {
                       onChange: (e) => {
                         localStorage.setItem(
