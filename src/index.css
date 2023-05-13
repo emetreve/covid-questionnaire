@@ -31,3 +31,8 @@ input[type='radio'] {
 .inverse{
     animation-direction: reverse;
 }
+
+.submit {
+    font-variant-caps: all-petite-caps;
+    font-size: 26px;
+}

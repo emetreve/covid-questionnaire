@@ -8,11 +8,7 @@ function useAdviceInputs() {
   // const { updateFormData } = useContext(FormDataContext);
   // const navigate = useNavigate();
 
-  const {
-    register,
-    handleSubmit,
-    // formState: { errors },
-  } = useForm({
+  const { register, handleSubmit } = useForm({
     defaultValues: {
       non_formal_meetings: localStorage.getItem('non_formal_meetings') || '',
       number_of_days_from_office:

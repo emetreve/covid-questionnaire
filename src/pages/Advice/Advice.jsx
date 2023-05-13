@@ -1,11 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import { FormTracker } from '@/components';
+import { ROUTES } from '@/config';
 import useAdviceInputs from './useAdviceInputs';
 
 function Advice() {
   const { handleSubmit, register, onSubmit } = useAdviceInputs();
 
+  const navigate = useNavigate();
+
   return (
-    <div className='px-44 h-full uppercase bg-granular-white relative'>
+    <div className='px-44 h-full pb-36 uppercase bg-granular-white relative'>
       <FormTracker progress={4} />
       <div className='flex justify-between'>
         <form
@@ -233,7 +237,7 @@ function Advice() {
             </div>
           </div>
           <div className='text-[1.4em] pt-8 mb-10'>
-            <p className='font-bold mb-4'>რას ფიქრობ ფიზიკურ შეკრებებზე? </p>
+            <p className='font-bold mb-4'>რას ფიქრობ ფიზიკურ შეკრებებზე?*</p>
             <textarea
               {...register('what_about_meetings_in_live', {
                 onChange: (e) => {
@@ -249,7 +253,7 @@ function Advice() {
           <div className='text-[1.4em] pt-5 mb-10'>
             <div className='font-bold mb-5'>
               <p>რას ფიქრობ არსებულ გარემოზე:</p>
-              <p>რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?</p>
+              <p>რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?*</p>
             </div>
             <textarea
               {...register('tell_us_your_opinion_about_us', {
@@ -263,8 +267,27 @@ function Advice() {
               className='block w-[41.5rem] h-52 p-5 border bg-transparent border-black resize-none focus:outline-none '
             ></textarea>
           </div>
-          <button type='submit'>Submit</button>
+          <div className='relative w-[41.5rem] pt-11'>
+            <button
+              type='submit'
+              className='absolute right-0 py-3 px-8 bg-turquoise tracking-wide text-white font-bold border rounded-[42px] submit'
+            >
+              დასრულება
+            </button>
+          </div>
         </form>
+        <div>
+          <img
+            className='h-6 absolute bottom-24 left-[56rem] z-20'
+            src='/assets/previous-button.png'
+            alt='go to previous page'
+            onClick={() => {
+              navigate(`${ROUTES.VACCINATION}`, {
+                state: { back: true },
+              });
+            }}
+          />
+        </div>
       </div>
     </div>
   );

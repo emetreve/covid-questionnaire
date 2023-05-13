@@ -140,6 +140,7 @@ const config = {
         black: '#232323',
         'yellow-eyes': '#D6D16E',
         error: '#F15524',
+        turquoise: '#208298',
       },
     },
   },

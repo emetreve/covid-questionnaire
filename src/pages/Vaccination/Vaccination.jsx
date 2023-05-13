@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { ROUTES } from '@/config';
 import { FormTracker } from '@/components';
 import { Illustration } from './components';
@@ -15,6 +15,7 @@ function Vaccinaton() {
   } = useVaccinationInputs();
 
   const navigate = useNavigate();
+  const { state } = useLocation();
 
   return (
     <div className='px-44 h-screen uppercase bg-granular-white relative'>
@@ -235,7 +236,7 @@ function Vaccinaton() {
           </div>
         </form>
         <div>
-          <Illustration />
+          <Illustration location={state} />
         </div>
       </div>
     </div>
