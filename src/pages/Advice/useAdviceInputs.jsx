@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { FormDataContext } from '@/context';
 import { ROUTES } from '@/config';
-import axios from 'axios';
+import { instance } from '@/services';
 
 function useAdviceInputs() {
   const { updateFormData, formData } = useContext(FormDataContext);
@@ -60,8 +60,8 @@ function useAdviceInputs() {
       }
     });
 
-    axios
-      .post('https://covid19.devtest.ge/api/create', contextData)
+    instance
+      .post('/create', contextData)
       .then((response) => {
         if (response.status === 201) {
           navigate(ROUTES.THANK_YOU);
