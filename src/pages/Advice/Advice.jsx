@@ -13,7 +13,7 @@ function Advice() {
           onSubmit={handleSubmit(onSubmit)}
           className='w-[43rem] pt-3'
         >
-          <div className='w-[38rem] leading-6 text-[1.4em]'>
+          <div className='w-[39.5rem] leading-7 text-[1.4em] tracking-wide'>
             <p>
               რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო,
               რომელსაც ჩვენი თანამშრომლები ქმნით, ბევრისთვის არის და ყოფილა
@@ -25,7 +25,7 @@ function Advice() {
               ყოველდღიური კომუნიკაციაც გაიშვიათდა.
             </p>
           </div>
-          <div className='text-[1.4em] pt-10 mb-10'>
+          <div className='text-[1.4em] pt-12 mb-10'>
             <p className='font-bold mb-4'>
               რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ
               შეხვედრები, სადაც ყველა სურვილისამებრ ჩაერთვება?*
@@ -231,6 +231,20 @@ function Advice() {
                 </label>
               </div>
             </div>
+          </div>
+          <div className='text-[1.4em] pt-8 mb-10'>
+            <p className='font-bold mb-4'>რას ფიქრობ ფიზიკურ შეკრებებზე? </p>
+            <textarea
+              {...register('what_about_meetings_in_live', {
+                onChange: (e) => {
+                  localStorage.setItem(
+                    'what_about_meetings_in_live',
+                    e.target.value
+                  );
+                },
+              })}
+              className='block w-[41.5rem] h-52 p-5 border bg-transparent border-black resize-none focus:outline-none '
+            ></textarea>
           </div>
           <button type='submit'>Submit</button>
         </form>
