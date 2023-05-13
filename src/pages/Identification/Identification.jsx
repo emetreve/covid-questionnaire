@@ -27,8 +27,8 @@ function Identification() {
               {...register('first_name', {
                 required: 'სახელის ველი სავალდებულოა',
                 minLength: {
-                  value: 2,
-                  message: 'სახელის ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან',
+                  value: 3,
+                  message: 'სახელის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან',
                 },
                 onChange: (e) => {
                   localStorage.setItem('first_name', e.target.value);
@@ -53,8 +53,8 @@ function Identification() {
               {...register('last_name', {
                 required: 'გვარის ველი სავალდებულოა',
                 minLength: {
-                  value: 2,
-                  message: 'გვარის ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან',
+                  value: 3,
+                  message: 'გვარის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან',
                 },
                 onChange: (e) => {
                   localStorage.setItem('last_name', e.target.value);

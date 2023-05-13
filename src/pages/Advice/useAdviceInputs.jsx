@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { FormDataContext } from '@/context';
 import { ROUTES } from '@/config';
+import axios from 'axios';
 
 function useAdviceInputs() {
   const { updateFormData, formData } = useContext(FormDataContext);
@@ -23,35 +24,54 @@ function useAdviceInputs() {
 
   const onSubmit = (data) => {
     updateFormData(data);
-    navigate(ROUTES.THANK_YOU);
+
     const contextData = { ...formData };
+
     Object.entries(contextData).forEach(([key, value]) => {
       if (value === '') {
         delete contextData[key];
       }
       if (key === 'antibodies') {
-        const number = contextData[key].number !== '';
-        const test_date = contextData[key].test_date !== '';
-        if (!number) {
+        const number = contextData[key].number;
+        const test_date = contextData[key].test_date;
+
+        if (number === '') {
           delete contextData[key].number;
         } else {
           contextData[key].number = Number(contextData[key].number);
         }
-        if (!test_date) {
+        if (test_date === '') {
           delete contextData[key].test_date;
         }
-        if (!number && !test_date) {
+        if (number === '' && test_date === '') {
           delete contextData[key];
         }
       }
+      if (key === 'had_vaccine') {
+        if (contextData[key] === 'კი') {
+          contextData[key] = true;
+        }
+        if (contextData[key] === 'არა') {
+          contextData[key] = false;
+        }
+      }
+      if (key === 'number_of_days_from_office') {
+        contextData[key] = Number(contextData[key]);
+      }
     });
-    console.log(222, contextData);
+
+    axios
+      .post('https://covid19.devtest.ge/api/create', contextData)
+      .then((response) => {
+        console.log(111, response);
+      })
+      .catch((error) => {
+        console.log(222, error);
+      });
+
+    window.scrollTo(0, 0);
+    navigate(ROUTES.THANK_YOU);
   };
-
-  //had_antibody_test
-  //had_vaccine
-
-  //number_of_days_from_office
 
   return {
     handleSubmit,
