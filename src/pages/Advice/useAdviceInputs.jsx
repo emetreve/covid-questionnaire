@@ -22,7 +22,7 @@ function useAdviceInputs() {
     mode: 'onChange',
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     updateFormData(data);
 
     const contextData = { ...formData };
@@ -60,16 +60,14 @@ function useAdviceInputs() {
       }
     });
 
-    instance
-      .post('/create', contextData)
-      .then((response) => {
-        if (response.status === 201) {
-          navigate(ROUTES.THANK_YOU);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    try {
+      const response = await instance.post('/create', contextData);
+      if (response.status === 201) {
+        navigate(ROUTES.THANK_YOU);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return {
