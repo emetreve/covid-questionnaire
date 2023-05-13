@@ -240,6 +240,7 @@ function Advice() {
             <p className='font-bold mb-4'>რას ფიქრობ ფიზიკურ შეკრებებზე?*</p>
             <textarea
               {...register('what_about_meetings_in_live', {
+                required: true,
                 onChange: (e) => {
                   localStorage.setItem(
                     'what_about_meetings_in_live',
@@ -257,6 +258,7 @@ function Advice() {
             </div>
             <textarea
               {...register('tell_us_your_opinion_about_us', {
+                required: true,
                 onChange: (e) => {
                   localStorage.setItem(
                     'tell_us_your_opinion_about_us',
