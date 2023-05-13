@@ -11,6 +11,7 @@ function Illustration() {
         alt='star'
         className='absolute animate-star'
       />
+      <div className='absolute animate-circle-to-star' />
     </div>
   );
 }
