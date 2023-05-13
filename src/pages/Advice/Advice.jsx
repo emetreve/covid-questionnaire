@@ -5,7 +5,7 @@ function Advice() {
   const { handleSubmit, register, onSubmit } = useAdviceInputs();
 
   return (
-    <div className='px-44 h-screen uppercase bg-granular-white relative'>
+    <div className='px-44 h-full uppercase bg-granular-white relative'>
       <FormTracker progress={4} />
       <div className='flex justify-between'>
         <form
@@ -71,11 +71,11 @@ function Advice() {
                 </label>
               </div>
               <div className='flex items-center mb-[1.25rem]'>
-                <label htmlFor='option2'>
+                <label htmlFor='option3'>
                   <input
                     type='radio'
                     name='non_formal_meetings'
-                    id='option2'
+                    id='option3'
                     value='ორ კვირაში ერთხელ'
                     {...register('non_formal_meetings', {
                       onChange: (e) => {
@@ -90,11 +90,11 @@ function Advice() {
                 </label>
               </div>
               <div className='flex items-center mb-[1.25rem]'>
-                <label htmlFor='option2'>
+                <label htmlFor='option4'>
                   <input
                     type='radio'
                     name='non_formal_meetings'
-                    id='option2'
+                    id='option4'
                     value='თვეში ერთხელ'
                     {...register('non_formal_meetings', {
                       onChange: (e) => {
@@ -106,6 +106,128 @@ function Advice() {
                     })}
                   />
                   თვეში ერთხელ
+                </label>
+              </div>
+            </div>
+          </div>
+          <div className='text-[1.4em] pt-10 mb-10'>
+            <p className='font-bold mb-4'>
+              კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*
+            </p>
+            <div className='ml-6 '>
+              <div className='flex items-center mb-[1.25rem]'>
+                <label htmlFor='option1'>
+                  <input
+                    type='radio'
+                    name='number_of_days_from_office'
+                    id='option1'
+                    value='0'
+                    {...register('number_of_days_from_office', {
+                      required: true,
+                      onChange: (e) => {
+                        localStorage.setItem(
+                          'number_of_days_from_office',
+                          e.target.value
+                        );
+                      },
+                    })}
+                  />
+                  0
+                </label>
+              </div>
+              <div className='flex items-center mb-[1.25rem]'>
+                <label htmlFor='option2'>
+                  <input
+                    type='radio'
+                    name='number_of_days_from_office'
+                    id='option2'
+                    value='1'
+                    {...register('number_of_days_from_office', {
+                      onChange: (e) => {
+                        localStorage.setItem(
+                          'number_of_days_from_office',
+                          e.target.value
+                        );
+                      },
+                    })}
+                  />
+                  1
+                </label>
+              </div>
+              <div className='flex items-center mb-[1.25rem]'>
+                <label htmlFor='option3'>
+                  <input
+                    type='radio'
+                    name='number_of_days_from_office'
+                    id='option3'
+                    value='2'
+                    {...register('number_of_days_from_office', {
+                      onChange: (e) => {
+                        localStorage.setItem(
+                          'number_of_days_from_office',
+                          e.target.value
+                        );
+                      },
+                    })}
+                  />
+                  2
+                </label>
+              </div>
+              <div className='flex items-center mb-[1.25rem]'>
+                <label htmlFor='option4'>
+                  <input
+                    type='radio'
+                    name='number_of_days_from_office'
+                    id='option4'
+                    value='3'
+                    {...register('number_of_days_from_office', {
+                      onChange: (e) => {
+                        localStorage.setItem(
+                          'number_of_days_from_office',
+                          e.target.value
+                        );
+                      },
+                    })}
+                  />
+                  3
+                </label>
+              </div>
+              <div className='flex items-center mb-[1.25rem]'>
+                <label htmlFor='option5'>
+                  <input
+                    type='radio'
+                    name='number_of_days_from_office'
+                    id='option5'
+                    value='4'
+                    {...register('number_of_days_from_office', {
+                      onChange: (e) => {
+                        localStorage.setItem(
+                          'number_of_days_from_office',
+                          e.target.value
+                        );
+                      },
+                    })}
+                  />
+                  4
+                </label>
+              </div>
+              <div className='flex items-center mb-[1.25rem]'>
+                <label htmlFor='option6'>
+                  <input
+                    type='radio'
+                    name='number_of_days_from_office'
+                    id='option6'
+                    value='5'
+                    {...register('number_of_days_from_office', {
+                      onChange: (e) => {
+                        localStorage.setItem(
+                          'number_of_days_from_office',
+                          e.target.value
+                        );
+                      },
+                    })}
+                  />
+                  5
                 </label>
               </div>
             </div>
