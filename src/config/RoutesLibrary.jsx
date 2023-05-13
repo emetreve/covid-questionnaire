@@ -1,6 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
 import { ROUTES } from '@/config';
-import { Landing, Identification, Covid, Vaccination, Advice } from '@/pages';
+import {
+  Landing,
+  Identification,
+  Covid,
+  Vaccination,
+  Advice,
+  ThankYou,
+} from '@/pages';
 
 function RoutesLibrary() {
   return (
@@ -10,6 +17,7 @@ function RoutesLibrary() {
       <Route path={ROUTES.COVID} element={<Covid />} />
       <Route path={ROUTES.VACCINATION} element={<Vaccination />} />
       <Route path={ROUTES.ADVICE} element={<Advice />} />
+      <Route path={ROUTES.THANK_YOU} element={<ThankYou />} />
     </Routes>
   );
 }

@@ -1,12 +1,12 @@
-// import { useContext } from 'react';
+import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-// import { useNavigate } from 'react-router-dom';
-// import { FormDataContext } from '@/context';
-// import { ROUTES } from '@/config';
+import { useNavigate } from 'react-router-dom';
+import { FormDataContext } from '@/context';
+import { ROUTES } from '@/config';
 
 function useAdviceInputs() {
-  // const { updateFormData } = useContext(FormDataContext);
-  // const navigate = useNavigate();
+  const { updateFormData } = useContext(FormDataContext);
+  const navigate = useNavigate();
 
   const { register, handleSubmit } = useForm({
     defaultValues: {
@@ -22,7 +22,8 @@ function useAdviceInputs() {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    updateFormData(data);
+    navigate(ROUTES.THANK_YOU);
   };
 
   return {
