@@ -63,14 +63,13 @@ function useAdviceInputs() {
     axios
       .post('https://covid19.devtest.ge/api/create', contextData)
       .then((response) => {
-        console.log(111, response);
+        if (response.status === 201) {
+          navigate(ROUTES.THANK_YOU);
+        }
       })
       .catch((error) => {
-        console.log(222, error);
+        console.log(error);
       });
-
-    window.scrollTo(0, 0);
-    navigate(ROUTES.THANK_YOU);
   };
 
   return {
