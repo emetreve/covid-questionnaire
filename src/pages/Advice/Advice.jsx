@@ -246,6 +246,23 @@ function Advice() {
               className='block w-[41.5rem] h-52 p-5 border bg-transparent border-black resize-none focus:outline-none '
             ></textarea>
           </div>
+          <div className='text-[1.4em] pt-5 mb-10'>
+            <div className='font-bold mb-5'>
+              <p>რას ფიქრობ არსებულ გარემოზე:</p>
+              <p>რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?</p>
+            </div>
+            <textarea
+              {...register('tell_us_your_opinion_about_us', {
+                onChange: (e) => {
+                  localStorage.setItem(
+                    'tell_us_your_opinion_about_us',
+                    e.target.value
+                  );
+                },
+              })}
+              className='block w-[41.5rem] h-52 p-5 border bg-transparent border-black resize-none focus:outline-none '
+            ></textarea>
+          </div>
           <button type='submit'>Submit</button>
         </form>
       </div>
