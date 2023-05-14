@@ -191,13 +191,33 @@ const config = {
           opacity: 1,
           top: '25rem',
           left: '80rem',
+          backgroundColor: 'rgba(243, 148, 148, 0.2)',
         },
 
         '100%': {
           transform: 'scale(35)',
           opacity: 0,
           top: '40rem',
-          left: '40rem',
+          left: '30rem',
+          backgroundColor: 'rgba(243, 148, 148, 0.2)',
+        },
+      },
+      'thank-you-fade-in': {
+        '0%': {
+          opacity: 0,
+        },
+
+        '25%': {
+          opacity: 0,
+        },
+        '75%': {
+          opacity: 0,
+        },
+        '85%': {
+          opacity: 0.5,
+        },
+        '100%': {
+          opacity: 1,
         },
       },
     },
@@ -215,7 +235,8 @@ const config = {
       'star-back': 'star-back 1s forwards',
       'heart-to-star': 'heart-to-star 1s forwards',
       'fade-in': 'fade-in 2s forwards',
-      'heart-zoom': 'heart-zoom  2s forwards',
+      'heart-zoom': 'heart-zoom  2.5s forwards',
+      'thank-you-fade-in': 'thank-you-fade-in 2.5s forwards',
     },
 
     fontFamily: {
