@@ -204,6 +204,7 @@ const config = {
         'yellow-eyes': '#D6D16E',
         error: '#F15524',
         turquoise: '#208298',
+        gray: '#232323',
       },
     },
   },
