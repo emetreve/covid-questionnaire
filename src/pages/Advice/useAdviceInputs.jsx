@@ -1,13 +1,10 @@
 import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
 import { FormDataContext } from '@/context';
-import { ROUTES } from '@/config';
 import { instance } from '@/services';
 
 function useAdviceInputs() {
   const { updateFormData, formData } = useContext(FormDataContext);
-  const navigate = useNavigate();
 
   const [showModal, setShowModal] = useState(false);
 
@@ -65,7 +62,6 @@ function useAdviceInputs() {
     try {
       const response = await instance.post('/create', contextData);
       if (response.status === 201) {
-        // navigate(ROUTES.THANK_YOU);
         setShowModal((prev) => !prev);
       }
     } catch (error) {
