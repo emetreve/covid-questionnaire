@@ -181,7 +181,6 @@ const config = {
         '0%': {
           opacity: 0,
         },
-
         '100%': {
           opacity: 1,
         },
@@ -195,7 +194,7 @@ const config = {
           filter: 'brightness(50%)',
         },
         '100%': {
-          transform: 'scale(35)',
+          transform: 'scale(34)',
           opacity: 0,
           top: '40rem',
           left: '30rem',
@@ -279,11 +278,11 @@ const config = {
       'star-to-heart': 'star-to-heart 1s forwards',
       'star-back': 'star-back 1s forwards',
       'heart-to-star': 'heart-to-star 1s forwards',
-      'fade-in': 'fade-in 2s forwards',
-      'heart-zoom': 'heart-zoom  3s forwards',
-      'thank-you-fade-in': 'thank-you-fade-in 2.5s forwards',
-      'sparkle-top': 'sparkle-top 3.5s forwards',
-      'sparkle-bottom': 'sparkle-bottom 3.5s forwards',
+      'fade-in': 'fade-in 0.7s forwards',
+      'heart-zoom': 'heart-zoom  2s forwards',
+      'thank-you-fade-in': 'thank-you-fade-in 1.9s forwards',
+      'sparkle-top': 'sparkle-top 2.5s forwards',
+      'sparkle-bottom': 'sparkle-bottom 2.5s forwards',
     },
 
     fontFamily: {
