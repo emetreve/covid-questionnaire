@@ -97,11 +97,11 @@ const config = {
         },
         '50%': { borderRadius: '50%' },
         '100%': {
-          width: '9rem',
+          width: '4rem',
           borderRadius: '50%',
-          top: '3rem',
-          left: '-4rem',
-          height: '9rem',
+          top: '5rem',
+          left: '0rem',
+          height: '4rem',
         },
       },
       'star-to-circle': {
