@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { FormDataContext } from '@/context';
@@ -8,6 +8,8 @@ import { instance } from '@/services';
 function useAdviceInputs() {
   const { updateFormData, formData } = useContext(FormDataContext);
   const navigate = useNavigate();
+
+  const [showModal, setShowModal] = useState(false);
 
   const { register, handleSubmit } = useForm({
     defaultValues: {
@@ -63,7 +65,8 @@ function useAdviceInputs() {
     try {
       const response = await instance.post('/create', contextData);
       if (response.status === 201) {
-        navigate(ROUTES.THANK_YOU);
+        // navigate(ROUTES.THANK_YOU);
+        setShowModal((prev) => !prev);
       }
     } catch (error) {
       console.log(error);
@@ -74,6 +77,7 @@ function useAdviceInputs() {
     handleSubmit,
     register,
     onSubmit,
+    showModal,
   };
 }
 

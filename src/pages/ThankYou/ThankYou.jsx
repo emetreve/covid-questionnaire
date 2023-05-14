@@ -1,6 +1,6 @@
 function ThankYou() {
   return (
-    <div className='relative h-screen flex items-center justify-center top-0 left-0 w-full bg-gray opacity-0 z-50 animate-fade-in overflow-hidden'>
+    <div className='fixed h-screen flex items-center justify-center top-0 left-0 w-full bg-gray opacity-0 z-50 animate-fade-in overflow-hidden'>
       <div>
         <img
           src='/assets/sparkle.png'

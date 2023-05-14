@@ -191,15 +191,16 @@ const config = {
           opacity: 1,
           top: '25rem',
           left: '80rem',
-          backgroundColor: 'rgba(243, 148, 148, 0.2)',
+          backgroundColor: 'black',
+          filter: 'brightness(50%)',
         },
-
         '100%': {
           transform: 'scale(35)',
           opacity: 0,
           top: '40rem',
           left: '30rem',
-          backgroundColor: 'rgba(243, 148, 148, 0.2)',
+          backgroundColor: 'black',
+          filter: 'brightness(50%)',
         },
       },
       'thank-you-fade-in': {
@@ -279,7 +280,7 @@ const config = {
       'star-back': 'star-back 1s forwards',
       'heart-to-star': 'heart-to-star 1s forwards',
       'fade-in': 'fade-in 2s forwards',
-      'heart-zoom': 'heart-zoom  2.5s forwards',
+      'heart-zoom': 'heart-zoom  3s forwards',
       'thank-you-fade-in': 'thank-you-fade-in 2.5s forwards',
       'sparkle-top': 'sparkle-top 3.5s forwards',
       'sparkle-bottom': 'sparkle-bottom 3.5s forwards',

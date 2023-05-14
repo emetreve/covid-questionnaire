@@ -1,4 +1,4 @@
-function Illustration({ backwards }) {
+function Illustration({ backwards, hideHeart }) {
   return (
     <div className='relative'>
       <img
@@ -9,7 +9,7 @@ function Illustration({ backwards }) {
       <img
         src='/assets/heart.png'
         alt='heart'
-        className='absolute animate-heart'
+        className={`${hideHeart && 'hidden'} absolute animate-heart`}
       />
       {!backwards && (
         <img
