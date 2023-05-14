@@ -149,6 +149,34 @@ const config = {
           opacity: 0,
         },
       },
+      'star-back': {
+        '0%': {
+          top: '13rem',
+          left: '6rem',
+          height: '5.25rem',
+          opacity: 0.2,
+        },
+        '100%': {
+          top: '2rem',
+          left: '-6rem',
+          height: '16.25rem',
+          opacity: 1,
+        },
+      },
+      'heart-to-star': {
+        '100%': {
+          top: '5rem',
+          left: '-2rem',
+          height: '3.25rem',
+          opacity: 0,
+        },
+        '0%': {
+          top: '12rem',
+          left: '10rem',
+          height: '11.25rem',
+          opacity: 1,
+        },
+      },
     },
     animation: {
       'dissolve-logo': 'dissolveLandingLogo 0.8s forwards',
@@ -161,6 +189,8 @@ const config = {
       'star-to-circle': 'star-to-circle 1s forwards',
       heart: 'heart 0.9s forwards',
       'star-to-heart': 'star-to-heart 1s forwards',
+      'star-back': 'star-back 1s forwards',
+      'heart-to-star': 'heart-to-star 1s forwards',
     },
 
     fontFamily: {
