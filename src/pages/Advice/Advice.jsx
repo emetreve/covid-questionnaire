@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { FormTracker } from '@/components';
 import { ROUTES } from '@/config';
 import useAdviceInputs from './useAdviceInputs';
+import { Illustration } from './components/Illustration';
 
 function Advice() {
   const { handleSubmit, register, onSubmit } = useAdviceInputs();
@@ -9,7 +10,7 @@ function Advice() {
   const navigate = useNavigate();
 
   return (
-    <div className='px-44 h-full pb-36 uppercase bg-granular-white relative'>
+    <div className='px-44 h-full pb-64 uppercase bg-granular-white relative'>
       <FormTracker progress={4} />
       <div className='flex justify-between'>
         <form
@@ -279,8 +280,11 @@ function Advice() {
           </div>
         </form>
         <div>
+          <Illustration />
+        </div>
+        <div>
           <img
-            className='h-6 absolute bottom-24 left-[56rem] z-20'
+            className='h-6  absolute bottom-24 left-[56rem] z-20'
             src='/assets/previous-button.png'
             alt='go to previous page'
             onClick={() => {
