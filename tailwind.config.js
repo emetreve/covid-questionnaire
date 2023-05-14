@@ -97,11 +97,11 @@ const config = {
         },
         '50%': { borderRadius: '50%' },
         '100%': {
-          width: '4rem',
+          width: '17rem',
           borderRadius: '50%',
-          top: '5rem',
-          left: '0rem',
-          height: '4rem',
+          top: '1rem',
+          left: '-8rem',
+          height: '17rem',
         },
       },
       'star-to-circle': {
@@ -165,9 +165,9 @@ const config = {
       },
       'heart-to-star': {
         '100%': {
-          top: '5rem',
-          left: '-2rem',
-          height: '3.25rem',
+          top: '1rem',
+          left: '-8rem',
+          height: '15rem',
           opacity: 0,
         },
         '0%': {
