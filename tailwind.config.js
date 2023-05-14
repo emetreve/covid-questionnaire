@@ -242,6 +242,28 @@ const config = {
           left: '46rem',
         },
       },
+      'sparkle-bottom': {
+        '0%': {
+          opacity: 0,
+        },
+
+        '25%': {
+          opacity: 0,
+        },
+        '75%': {
+          opacity: 0,
+          top: '35rem',
+          right: '52rem',
+        },
+        '85%': {
+          opacity: 0.5,
+        },
+        '100%': {
+          opacity: 1,
+          top: '37rem',
+          right: '49rem',
+        },
+      },
     },
     animation: {
       'dissolve-logo': 'dissolveLandingLogo 0.8s forwards',
@@ -260,6 +282,7 @@ const config = {
       'heart-zoom': 'heart-zoom  2.5s forwards',
       'thank-you-fade-in': 'thank-you-fade-in 2.5s forwards',
       'sparkle-top': 'sparkle-top 3.5s forwards',
+      'sparkle-bottom': 'sparkle-bottom 3.5s forwards',
     },
 
     fontFamily: {
