@@ -1,5 +1,5 @@
 import { ROUTES } from '@/config';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { FormTracker } from '@/components';
 import { Error } from '@/components';
 import { Illustration } from './components';
@@ -14,7 +14,10 @@ function Covid() {
     had_covid,
     had_antibody_test,
   } = useCovidInputs();
+
   const navigate = useNavigate();
+  const { state } = useLocation();
+
   return (
     <div className='px-44 h-screen uppercase bg-granular-white relative'>
       <FormTracker progress={2} />
@@ -33,7 +36,7 @@ function Covid() {
                     type='radio'
                     name='had_covid'
                     id='option1'
-                    value='კი'
+                    value='yes'
                     {...register('had_covid', {
                       required: true,
                       onChange: (e) => {
@@ -50,7 +53,7 @@ function Covid() {
                     type='radio'
                     name='had_covid'
                     id='option2'
-                    value='არა'
+                    value='no'
                     {...register('had_covid', {
                       onChange: (e) => {
                         localStorage.setItem('had_covid', e.target.value);
@@ -66,7 +69,7 @@ function Covid() {
                     type='radio'
                     name='had_covid'
                     id='option3'
-                    value='ახლა მაქვს'
+                    value='have_right_now'
                     {...register('had_covid', {
                       onChange: (e) => {
                         localStorage.setItem('had_covid', e.target.value);
@@ -206,7 +209,7 @@ function Covid() {
           </div>
         </form>
         <div>
-          <Illustration />
+          <Illustration backwards={state} />
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { ROUTES } from '@/config';
 import { FormTracker } from '@/components';
 import { Illustration } from './components';
@@ -13,6 +13,10 @@ function Vaccinaton() {
     vaccination_stage,
     i_am_waiting,
   } = useVaccinationInputs();
+
+  const navigate = useNavigate();
+  const { state } = useLocation();
+
   return (
     <div className='px-44 h-screen uppercase bg-granular-white relative'>
       <FormTracker progress={3} />
@@ -70,7 +74,7 @@ function Vaccinaton() {
                       type='radio'
                       name='vaccination_stage'
                       id='option1'
-                      value='პირველი დოზა და დარეგისტრირებული ვარ მეორეზე'
+                      value='first_dosage_and_registered_on_the_second'
                       {...register('vaccination_stage', {
                         required: true,
                         onChange: (e) => {
@@ -90,7 +94,7 @@ function Vaccinaton() {
                       type='radio'
                       name='vaccination_stage'
                       id='option2'
-                      value='სრულად აცრილი ვარ'
+                      value='fully_vaccinated'
                       {...register('vaccination_stage', {
                         onChange: (e) => {
                           localStorage.setItem(
@@ -109,7 +113,7 @@ function Vaccinaton() {
                       type='radio'
                       name='vaccination_stage'
                       id='option3'
-                      value='პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე'
+                      value='first_dosage_and_not_registered_yet'
                       {...register('vaccination_stage', {
                         onChange: (e) => {
                           localStorage.setItem(
@@ -128,7 +132,7 @@ function Vaccinaton() {
                 <div className='mt-10 pl-16 w-68 lowercase leading-7'>
                   <p>
                     რომ არ გადადო,
-                    <span>ბარემ ახლავე დარეგისტრირდი</span>
+                    <span className='block'>ბარემ ახლავე დარეგისტრირდი</span>
                     <a
                       href='https://booking.moh.gov.ge/'
                       className='text-blue-500'
@@ -150,7 +154,7 @@ function Vaccinaton() {
                       type='radio'
                       name='i_am_waiting'
                       id='option1'
-                      value='დარეგისტრირებული ვარ და ველოდები რიცხვს'
+                      value='registered_and_waiting'
                       {...register('i_am_waiting', {
                         required: true,
                         onChange: (e) => {
@@ -167,7 +171,7 @@ function Vaccinaton() {
                       type='radio'
                       name='i_am_waiting'
                       id='option2'
-                      value='არ ვგეგმავ'
+                      value='not_planning'
                       {...register('i_am_waiting', {
                         onChange: (e) => {
                           localStorage.setItem('i_am_waiting', e.target.value);
@@ -183,7 +187,7 @@ function Vaccinaton() {
                       type='radio'
                       name='i_am_waiting'
                       id='option3'
-                      value='გადატანილი მაქვს და ვგეგმავ აცრას'
+                      value='had_covid_and_planning_to_be_vaccinated'
                       {...register('i_am_waiting', {
                         onChange: (e) => {
                           localStorage.setItem('i_am_waiting', e.target.value);
@@ -199,7 +203,7 @@ function Vaccinaton() {
                   <p>
                     ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ
                     ვაქცინის გაკეთება.
-                    <span className='mt-6'>👉 რეგისტრაციის ბმული</span>
+                    <span className='block mt-7'>👉 რეგისტრაციის ბმული</span>
                     <a
                       href='https://booking.moh.gov.ge/'
                       className='text-blue-500'
@@ -212,13 +216,16 @@ function Vaccinaton() {
             </div>
           )}
           <div>
-            <Link to={ROUTES.COVID}>
-              <img
-                className='h-6 absolute bottom-24 left-[56rem] z-20'
-                src='/assets/previous-button.png'
-                alt='go to previous page'
-              />
-            </Link>
+            <img
+              className='h-6 absolute bottom-24 left-[56rem] z-20'
+              src='/assets/previous-button.png'
+              alt='go to previous page'
+              onClick={() => {
+                navigate(`${ROUTES.COVID}`, {
+                  state: { back: true },
+                });
+              }}
+            />
             <button type='submit'>
               <img
                 className='h-6 absolute bottom-24 left-[64rem] z-20'
@@ -229,7 +236,7 @@ function Vaccinaton() {
           </div>
         </form>
         <div>
-          <Illustration />
+          <Illustration location={state} />
         </div>
       </div>
     </div>

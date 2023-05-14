@@ -76,20 +76,46 @@ const config = {
         '0%': {
           top: '28rem',
           left: '-9rem',
-          height: '90px',
+          height: '5.625rem',
           opacity: 0.2,
-        },
-        '50%': {
-          top: '16rem',
-          left: '-7rem',
-          height: '150px',
-          opacity: 0.8,
         },
         '100%': {
           top: '2rem',
           left: '-6rem',
-          height: '260px',
+          height: '16.25rem',
           opacity: 1,
+        },
+      },
+      'circle-to-star': {
+        '0%': {
+          backgroundColor: '#DD3939',
+          borderRadius: '50%',
+          left: '-8.5rem',
+          top: '13.75rem',
+          height: '11rem',
+          width: '11rem',
+        },
+        '50%': { borderRadius: '50%' },
+        '100%': {
+          width: '9rem',
+          borderRadius: '50%',
+          top: '3rem',
+          left: '-4rem',
+          height: '9rem',
+        },
+      },
+      'star-to-circle': {
+        '0%': {
+          top: '2rem',
+          left: '-6rem',
+          height: '16.25rem',
+          opacity: 1,
+        },
+        '100%': {
+          top: '20rem',
+          left: '-5rem',
+          height: '9.5rem',
+          opacity: 0,
         },
       },
     },
@@ -100,6 +126,8 @@ const config = {
       circle: 'circle 0.6s forwards',
       'circle-reverse': 'circle-reverse 0.6s backwards',
       star: 'star 0.9s forwards',
+      'circle-to-star': 'circle-to-star 1s backwards',
+      'star-to-circle': 'star-to-circle 1s forwards',
     },
 
     fontFamily: {
@@ -112,6 +140,7 @@ const config = {
         black: '#232323',
         'yellow-eyes': '#D6D16E',
         error: '#F15524',
+        turquoise: '#208298',
       },
     },
   },

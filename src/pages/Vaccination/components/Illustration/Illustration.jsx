@@ -1,4 +1,4 @@
-function Illustration() {
+function Illustration({ location }) {
   return (
     <div className='relative'>
       <img
@@ -11,6 +11,7 @@ function Illustration() {
         alt='star'
         className='absolute animate-star'
       />
+      {location ? '' : <div className='absolute animate-circle-to-star' />}
     </div>
   );
 }
