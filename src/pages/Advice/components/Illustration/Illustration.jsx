@@ -11,13 +11,15 @@ function Illustration({ backwards }) {
         alt='heart'
         className='absolute animate-heart'
       />
-      {/* {backwards && (
+      {backwards ? (
+        ''
+      ) : (
         <img
           src='/assets/star.png'
           alt='star'
-          className='absolute animate-star-to-circle'
+          className='absolute animate-star-to-heart'
         />
-      )} */}
+      )}
     </div>
   );
 }
