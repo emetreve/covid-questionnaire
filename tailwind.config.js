@@ -118,6 +118,20 @@ const config = {
           opacity: 0,
         },
       },
+      heart: {
+        '0%': {
+          top: '2rem',
+          left: '10rem',
+          height: '5.25rem',
+          opacity: 0.2,
+        },
+        '100%': {
+          top: '8rem',
+          left: '18rem',
+          height: '11.25rem',
+          opacity: 1,
+        },
+      },
     },
     animation: {
       'dissolve-logo': 'dissolveLandingLogo 0.8s forwards',
@@ -128,6 +142,7 @@ const config = {
       star: 'star 0.9s forwards',
       'circle-to-star': 'circle-to-star 1s backwards',
       'star-to-circle': 'star-to-circle 1s forwards',
+      heart: 'heart 0.9s forwards',
     },
 
     fontFamily: {
