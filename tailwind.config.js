@@ -220,6 +220,28 @@ const config = {
           opacity: 1,
         },
       },
+      'sparkle-top': {
+        '0%': {
+          opacity: 0,
+        },
+
+        '25%': {
+          opacity: 0,
+        },
+        '75%': {
+          opacity: 0,
+          top: '30rem',
+          left: '50rem',
+        },
+        '85%': {
+          opacity: 0.5,
+        },
+        '100%': {
+          opacity: 1,
+          top: '28rem',
+          left: '46rem',
+        },
+      },
     },
     animation: {
       'dissolve-logo': 'dissolveLandingLogo 0.8s forwards',
@@ -237,6 +259,7 @@ const config = {
       'fade-in': 'fade-in 2s forwards',
       'heart-zoom': 'heart-zoom  2.5s forwards',
       'thank-you-fade-in': 'thank-you-fade-in 2.5s forwards',
+      'sparkle-top': 'sparkle-top 3.5s forwards',
     },
 
     fontFamily: {

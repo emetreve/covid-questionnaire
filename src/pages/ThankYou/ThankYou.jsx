@@ -3,7 +3,11 @@ function ThankYou() {
     <div className='relative h-screen flex items-center justify-center top-0 left-0 w-full bg-gray opacity-0 z-50 animate-fade-in overflow-hidden'>
       {/* <div className='h-screen bg-gray flex items-center justify-center'> */}
       <div>
-        {/* <img src='/assets/sparkle.png' alt='sparkle' /> */}
+        <img
+          src='/assets/sparkle.png'
+          alt='sparkle'
+          className='h-14 animate-sparkle-top absolute z-50 '
+        />
         <h1 className='font-bold text-white thankyou animate-thank-you-fade-in'>
           მადლობა
         </h1>
