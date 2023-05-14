@@ -20,11 +20,11 @@
 }
 
 input[type='radio'] {
-    margin-right: 14px;
-    width:20px;
-    height:20px;
+    margin-right: 0.875rem;
+    width:1.25rem;
+    height:1.25rem;
     position: relative;
-    top: 4px;
+    top: 0.25rem;
     accent-color: #232323;
 }
 
@@ -34,7 +34,14 @@ input[type='radio'] {
 
 .submit {
     font-variant-caps: all-petite-caps;
-    font-size: 26px;
+    font-size: 1.625rem;
+}
+
+.thankyou{
+    font-variant-caps: all-petite-caps;
+    font-size: 5.625rem;
+    letter-spacing: 1.2rem;
+
 }
 
 .scrollbar-hide::-webkit-scrollbar {
