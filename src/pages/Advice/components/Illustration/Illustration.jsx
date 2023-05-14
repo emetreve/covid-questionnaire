@@ -11,9 +11,7 @@ function Illustration({ backwards }) {
         alt='heart'
         className='absolute animate-heart'
       />
-      {backwards ? (
-        ''
-      ) : (
+      {!backwards && (
         <img
           src='/assets/star.png'
           alt='star'
