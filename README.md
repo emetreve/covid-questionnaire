@@ -71,15 +71,16 @@ npm run dev
 │   ├── context
 │   ├── helpers
 │   ├── pages
-│   │   └── Vaccination
-│   │       ├── components
-│   │       │   ├── Illustration
-│   │       │   │   ├── Illustration.jsx
-│   │       │   │   └── index.js
-│   │       │   └── index.js
-│   │       ├── index.js
-│   │       ├── useVaccinationInputs.jsx
-│   │       └── Vaccination.jsx
+│   │   ├── Vaccination
+│   │   │   ├── components
+│   │   │   │   ├── Illustration
+│   │   │   │   │   ├── Illustration.jsx
+│   │   │   │   │   └── index.js
+│   │   │   │   └── index.js
+│   │   │   ├── index.js
+│   │   │   ├── useVaccinationInputs.jsx
+│   │   │   └── Vaccination.jsx
+│   │   └── index.js
 │   └── services
 ├── .eslintrc.json
 ├── .gitignore
