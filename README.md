@@ -1,5 +1,5 @@
 <div style="display:flex; align-items: center">
-  <img src="/assets/redberrylogo.svg" alt="logo" width="220" style="margin-right: 20px" />
+  <img src="public/assets/redberrylogo.svg" alt="logo" width="220" style="margin-right: 20px" />
   <h1 style="position:relative; top: -6px" >Covid Questionnaire</h1>
 </div>
 
@@ -19,16 +19,16 @@ Covid Questionnaire is a multi-step form designed to help companies gather valua
 
 ### Prerequisites
 
-- <img src="/assets/npm.png" width="35" style="position: relative; top: 4px" /> _npm@8.19 and up\_
-- <img src="/assets/node.png" width="35" style="position: relative; top: 6px" /> node@16.18 and up\_
+- <img src="public/assets/npm.png" width="35" style="position: relative; top: 4px" /> _npm@8.19 and up\_
+- <img src="public/assets/node.png" width="35" style="position: relative; top: 6px" /> node@16.18 and up\_
 
 #
 
 ### Tech Stack
 
-- <img src="/assets/react.png" height="18" style="position: relative; top: 4px" /> [React](https://react.dev/reference/react) - JS framework for building user interfaces
-- <img src="/assets/vite.png" height="19" style="position: relative; top: 4px" /> [Vite](https://vitejs.dev/) - frontend tooling
-- <img src="/assets/tailwind.png" height="19" style="position: relative; top: 4px" /> [Tailwind](https://tailwindui.com/) - CSS framework
+- <img src="public/assets/react.png" height="18" style="position: relative; top: 4px" /> [React](https://react.dev/reference/react) - JS framework for building user interfaces
+- <img src="public/assets/vite.png" height="19" style="position: relative; top: 4px" /> [Vite](https://vitejs.dev/) - frontend tooling
+- <img src="public/assets/tailwind.png" height="19" style="position: relative; top: 4px" /> [Tailwind](https://tailwindui.com/) - CSS framework
 
 #
 
