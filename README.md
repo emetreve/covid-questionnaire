@@ -60,10 +60,26 @@ npm run dev
 ├─── public
 ├─── src
 │   ├─── components
+│   |    ├─── Error
+|   |    |    ├─── Error.jsx
+|   |    |    ├─── index.js
+|   |    ├─── FormTracker
+|   |    |    ├─── FormTracker.jsx
+|   |    |    ├─── index.js
+|   |    ├─── index.js
 │   ├─── config
 │   ├─── context
 │   ├─── helpers
 │   ├─── pages
+|   |    ├─── Vaccination
+|   |    |    ├─── components
+|   |    |    |    ├─── Illustration
+|   |    |    |    |    ├─── Illustration.jsx
+|   |    |    |    |    ├─── index.js
+|   |    |    |    ├─── index.js
+|   |    |    ├─── index.js
+|   |    |    ├─── useVaccinationInputs.jsx
+|   |    |    ├─── Vaccination.jsx
 │   ├─── services
 - .eslintrc.json
 - .gitignore
