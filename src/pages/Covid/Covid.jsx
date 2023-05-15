@@ -12,7 +12,10 @@ function Covid() {
   const { state } = useLocation();
 
   useEffect(() => {
-    identificationDataExists && navigate(ROUTES.IDENTIFICATION);
+    if (!identificationDataExists()) {
+      navigate(ROUTES.IDENTIFICATION);
+    }
+    console.log(identificationDataExists());
   }, [navigate]);
 
   const {
