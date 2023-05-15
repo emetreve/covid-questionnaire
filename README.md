@@ -88,7 +88,6 @@ npm run dev
 ├── postcss.config.js
 ├── tailwind.config.js
 └── vite.config.js
-By aligning all the vertical bars to the left, the code block should render correctly on GitHub without any red lines.
 ```
 
 For more information about project standards, take a look at these docs:
