@@ -24,7 +24,13 @@ function useAdviceInputs() {
   const onSubmit = async (data) => {
     updateFormData(data);
 
-    const contextData = { ...formData };
+    const contextData = {
+      ...formData,
+      antibodies: {
+        number: formData.antibodies.number,
+        test_date: formData.antibodies.test_date,
+      },
+    };
 
     Object.entries(contextData).forEach(([key, value]) => {
       if (value === '') {
