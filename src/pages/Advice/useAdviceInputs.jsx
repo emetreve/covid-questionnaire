@@ -22,10 +22,10 @@ function useAdviceInputs() {
   });
 
   const onSubmit = async (data) => {
-    updateFormData(data);
-
     const contextData = {
       ...formData,
+      ...data,
+
       antibodies: {
         number: formData.antibodies.number,
         test_date: formData.antibodies.test_date,
@@ -69,9 +69,11 @@ function useAdviceInputs() {
       const response = await instance.post('/create', contextData);
       if (response.status === 201) {
         setShowModal((prev) => !prev);
+        console.log(formData);
       }
     } catch (error) {
       console.log(error);
+      console.log(formData);
     }
   };
 
