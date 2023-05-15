@@ -57,37 +57,38 @@ npm run dev
 ### Project Structure
 
 ```bash
-├─── public
-├─── src
-│   ├─── components
-│   |    ├─── Error
-|   |    |    ├─── Error.jsx
-|   |    |    ├─── index.js
-|   |    ├─── FormTracker
-|   |    |    ├─── FormTracker.jsx
-|   |    |    ├─── index.js
-|   |    ├─── index.js
-│   ├─── config
-│   ├─── context
-│   ├─── helpers
-│   ├─── pages
-|   |    ├─── Vaccination
-|   |    |    ├─── components
-|   |    |    |    ├─── Illustration
-|   |    |    |    |    ├─── Illustration.jsx
-|   |    |    |    |    ├─── index.js
-|   |    |    |    ├─── index.js
-|   |    |    ├─── index.js
-|   |    |    ├─── useVaccinationInputs.jsx
-|   |    |    ├─── Vaccination.jsx
-│   ├─── services
-- .eslintrc.json
-- .gitignore
-- .prettierrc.json
-- index.html
-- postcss.config.js
-- tailwind.config.js
-- vite.config.js
+├── public
+├── src
+│   ├── components
+│   │   ├── Error
+│   │   │   ├── Error.jsx
+│   │   │   └── index.js
+│   │   ├── FormTracker
+│   │   │   ├── FormTracker.jsx
+│   │   │   └── index.js
+│   │   └── index.js
+│   ├── config
+│   ├── context
+│   ├── helpers
+│   ├── pages
+│   │   └── Vaccination
+│   │       ├── components
+│   │       │   ├── Illustration
+│   │       │   │   ├── Illustration.jsx
+│   │       │   │   └── index.js
+│   │       │   └── index.js
+│   │       ├── index.js
+│   │       ├── useVaccinationInputs.jsx
+│   │       └── Vaccination.jsx
+│   └── services
+├── .eslintrc.json
+├── .gitignore
+├── .prettierrc.json
+├── index.html
+├── postcss.config.js
+├── tailwind.config.js
+└── vite.config.js
+By aligning all the vertical bars to the left, the code block should render correctly on GitHub without any red lines.
 ```
 
 For more information about project standards, take a look at these docs:
