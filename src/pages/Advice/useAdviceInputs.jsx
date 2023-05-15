@@ -4,7 +4,7 @@ import { FormDataContext } from '@/context';
 import { instance } from '@/services';
 
 function useAdviceInputs() {
-  const { updateFormData, formData } = useContext(FormDataContext);
+  const { formData } = useContext(FormDataContext);
 
   const [showModal, setShowModal] = useState(false);
 
