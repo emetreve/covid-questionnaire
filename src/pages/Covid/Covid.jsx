@@ -1,11 +1,20 @@
-import { ROUTES } from '@/config';
+import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { ROUTES } from '@/config';
 import { FormTracker } from '@/components';
 import { Error } from '@/components';
 import { Illustration } from './components';
 import useCovidInputs from './useCovidInputs';
+import { identificationDataExists } from '@/helpers';
 
 function Covid() {
+  const navigate = useNavigate();
+  const { state } = useLocation();
+
+  useEffect(() => {
+    identificationDataExists && navigate(ROUTES.IDENTIFICATION);
+  }, [navigate]);
+
   const {
     handleSubmit,
     onSubmit,
@@ -14,9 +23,6 @@ function Covid() {
     had_covid,
     had_antibody_test,
   } = useCovidInputs();
-
-  const navigate = useNavigate();
-  const { state } = useLocation();
 
   return (
     <div className='px-44 h-screen uppercase bg-granular-white relative'>
