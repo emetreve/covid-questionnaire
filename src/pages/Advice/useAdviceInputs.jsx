@@ -29,7 +29,11 @@ function useAdviceInputs() {
     }
   }, [navigate]);
 
-  const { register, handleSubmit } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
     defaultValues: {
       non_formal_meetings: localStorage.getItem('non_formal_meetings') || '',
       number_of_days_from_office:
@@ -100,6 +104,7 @@ function useAdviceInputs() {
     register,
     onSubmit,
     showModal,
+    errors,
   };
 }
 

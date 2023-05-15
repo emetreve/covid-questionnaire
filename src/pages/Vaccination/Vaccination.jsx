@@ -1,6 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ROUTES } from '@/config';
-import { FormTracker } from '@/components';
+import { FormTracker, Error } from '@/components';
 import { Illustration } from './components';
 import useVaccinationInputs from './useVaccinationInputs';
 
@@ -12,6 +12,7 @@ function Vaccinaton() {
     had_vaccine,
     vaccination_stage,
     i_am_waiting,
+    errors,
   } = useVaccinationInputs();
 
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ function Vaccinaton() {
                     id='option1-1'
                     value='კი'
                     {...register('had_vaccine', {
-                      required: true,
+                      required: 'ველი სავალდებულოა',
                       onChange: (e) => {
                         localStorage.setItem('had_vaccine', e.target.value);
                       },
@@ -63,6 +64,11 @@ function Vaccinaton() {
                 </label>
               </div>
             </div>
+            <div className='h-4'>
+              {errors?.had_vaccine && (
+                <Error content={errors.had_vaccine.message} />
+              )}
+            </div>
           </div>
           {had_vaccine === 'კი' && (
             <div className='text-[1.4em]'>
@@ -76,7 +82,7 @@ function Vaccinaton() {
                       id='option1-2'
                       value='first_dosage_and_registered_on_the_second'
                       {...register('vaccination_stage', {
-                        required: true,
+                        required: 'ველი სავალდებულოა',
                         onChange: (e) => {
                           localStorage.setItem(
                             'vaccination_stage',
@@ -141,6 +147,11 @@ function Vaccinaton() {
                   </p>
                 </div>
               )}
+              <div className='h-4'>
+                {errors?.vaccination_stage && (
+                  <Error content={errors.vaccination_stage.message} />
+                )}
+              </div>
             </div>
           )}
           {had_vaccine === 'არა' && (
@@ -155,7 +166,7 @@ function Vaccinaton() {
                       id='option1-3'
                       value='registered_and_waiting'
                       {...register('i_am_waiting', {
-                        required: true,
+                        required: 'ველი სავალდებულოა',
                         onChange: (e) => {
                           localStorage.setItem('i_am_waiting', e.target.value);
                         },
@@ -195,6 +206,11 @@ function Vaccinaton() {
                     />
                     გადატანილი მაქვს და ვგეგმავ აცრას
                   </label>
+                </div>
+                <div className='h-4'>
+                  {errors?.i_am_waiting && (
+                    <Error content={errors.i_am_waiting.message} />
+                  )}
                 </div>
               </div>
               {i_am_waiting === 'had_covid_and_planning_to_be_vaccinated' && (

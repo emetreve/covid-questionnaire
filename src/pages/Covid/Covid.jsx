@@ -1,7 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ROUTES } from '@/config';
-import { FormTracker } from '@/components';
-import { Error } from '@/components';
+import { FormTracker, Error } from '@/components';
 import { Illustration } from './components';
 import useCovidInputs from './useCovidInputs';
 
@@ -38,7 +37,7 @@ function Covid() {
                     id='option1-1'
                     value='yes'
                     {...register('had_covid', {
-                      required: true,
+                      required: 'ველი სავალდებულოა',
                       onChange: (e) => {
                         localStorage.setItem('had_covid', e.target.value);
                       },
@@ -79,6 +78,11 @@ function Covid() {
                   ახლა მაქვს
                 </label>
               </div>
+              <div className='h-4'>
+                {errors?.had_covid && (
+                  <Error content={errors.had_covid.message} />
+                )}
+              </div>
             </div>
           </div>
           {had_covid === 'yes' && (
@@ -95,7 +99,7 @@ function Covid() {
                       id='option1-2'
                       value='კი'
                       {...register('had_antibody_test', {
-                        required: true,
+                        required: 'ველი სავალდებულოა',
                         onChange: (e) => {
                           localStorage.setItem(
                             'had_antibody_test',
@@ -126,6 +130,11 @@ function Covid() {
                     არა
                   </label>
                 </div>
+              </div>
+              <div className='h-4'>
+                {errors?.had_antibody_test && (
+                  <Error content={errors.had_antibody_test.message} />
+                )}
               </div>
             </div>
           )}

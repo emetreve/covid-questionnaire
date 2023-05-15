@@ -1,12 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-import { FormTracker } from '@/components';
+import { FormTracker, Error } from '@/components';
 import { ROUTES } from '@/config';
 import useAdviceInputs from './useAdviceInputs';
 import { Illustration } from './components';
 import { Modal } from './components';
 
 function Advice() {
-  const { handleSubmit, register, onSubmit, showModal } = useAdviceInputs();
+  const { handleSubmit, register, onSubmit, showModal, errors } =
+    useAdviceInputs();
 
   const navigate = useNavigate();
 
@@ -46,7 +47,7 @@ function Advice() {
                       id='option1-1'
                       value='twice_a_week'
                       {...register('non_formal_meetings', {
-                        required: true,
+                        required: 'ველი სავალდებულოა',
                         onChange: (e) => {
                           localStorage.setItem(
                             'non_formal_meetings',
@@ -116,6 +117,11 @@ function Advice() {
                   </label>
                 </div>
               </div>
+              <div className='h-4'>
+                {errors?.non_formal_meetings && (
+                  <Error content={errors.non_formal_meetings.message} />
+                )}
+              </div>
             </div>
             <div className='text-[1.4em] pt-10 mb-10'>
               <p className='font-bold mb-4'>
@@ -130,7 +136,7 @@ function Advice() {
                       id='option1-2'
                       value='0'
                       {...register('number_of_days_from_office', {
-                        required: true,
+                        required: 'ველი სავალდებულოა',
                         onChange: (e) => {
                           localStorage.setItem(
                             'number_of_days_from_office',
@@ -237,6 +243,11 @@ function Advice() {
                     5
                   </label>
                 </div>
+              </div>
+              <div className='h-4'>
+                {errors?.number_of_days_from_office && (
+                  <Error content={errors.number_of_days_from_office.message} />
+                )}
               </div>
             </div>
             <div className='text-[1.4em] pt-8 mb-10'>
