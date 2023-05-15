@@ -31,11 +31,11 @@ function Covid() {
             <p className='font-bold mb-4'>გაქვს გადატანილი Covid-19?*</p>
             <div className='ml-6 flex flex-col gap-3'>
               <div>
-                <label htmlFor='option1' className='flex align-items'>
+                <label htmlFor='option1-1' className='flex align-items'>
                   <input
                     type='radio'
                     name='had_covid'
-                    id='option1'
+                    id='option1-1'
                     value='yes'
                     {...register('had_covid', {
                       required: true,
@@ -48,11 +48,11 @@ function Covid() {
                 </label>
               </div>
               <div>
-                <label htmlFor='option2'>
+                <label htmlFor='option2-1'>
                   <input
                     type='radio'
                     name='had_covid'
-                    id='option2'
+                    id='option2-1'
                     value='no'
                     {...register('had_covid', {
                       onChange: (e) => {
@@ -64,11 +64,11 @@ function Covid() {
                 </label>
               </div>
               <div>
-                <label htmlFor='option3'>
+                <label htmlFor='option3-1'>
                   <input
                     type='radio'
                     name='had_covid'
-                    id='option3'
+                    id='option3-1'
                     value='have_right_now'
                     {...register('had_covid', {
                       onChange: (e) => {
@@ -81,18 +81,18 @@ function Covid() {
               </div>
             </div>
           </div>
-          {had_covid === 'კი' && (
+          {had_covid === 'yes' && (
             <div className='text-[1.4em] pt-10'>
               <p className='font-bold mb-4'>
                 ანტისხეულების ტესტი გაქვს გაკეთებული?*
               </p>
               <div className='ml-6 '>
                 <div className='flex items-center mb-[1.25rem]'>
-                  <label htmlFor='option1'>
+                  <label htmlFor='option1-2'>
                     <input
                       type='radio'
                       name='had_antibody_test'
-                      id='option1'
+                      id='option1-2'
                       value='კი'
                       {...register('had_antibody_test', {
                         required: true,
@@ -108,11 +108,11 @@ function Covid() {
                   </label>
                 </div>
                 <div className='flex items-center mb-[1.25rem]'>
-                  <label htmlFor='option2'>
+                  <label htmlFor='option2-2'>
                     <input
                       type='radio'
                       name='had_antibody_test'
-                      id='option2'
+                      id='option2-2'
                       value='არა'
                       {...register('had_antibody_test', {
                         onChange: (e) => {
@@ -129,7 +129,7 @@ function Covid() {
               </div>
             </div>
           )}
-          {had_antibody_test === 'კი' && had_covid === 'კი' && (
+          {had_antibody_test === 'კი' && had_covid === 'yes' && (
             <div className='text-[1.4em] pt-6'>
               <p className='font-bold mb-4'>
                 თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და
@@ -166,7 +166,7 @@ function Covid() {
               )}
             </div>
           )}
-          {had_antibody_test === 'არა' && had_covid === 'კი' && (
+          {had_antibody_test === 'არა' && had_covid === 'yes' && (
             <div className='text-[1.4em] pt-6'>
               <p className='font-bold mb-4'>
                 მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა

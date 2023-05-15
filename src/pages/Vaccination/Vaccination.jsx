@@ -30,11 +30,11 @@ function Vaccinaton() {
             <p className='font-bold mb-4'>უკვე აცრილი ხარ?* </p>
             <div className='ml-6 '>
               <div className='flex items-center mb-[1.25rem]'>
-                <label htmlFor='option1'>
+                <label htmlFor='option1-1'>
                   <input
                     type='radio'
                     name='had_vaccine'
-                    id='option1'
+                    id='option1-1'
                     value='კი'
                     {...register('had_vaccine', {
                       required: true,
@@ -47,11 +47,11 @@ function Vaccinaton() {
                 </label>
               </div>
               <div className='flex items-center mb-[1.25rem]'>
-                <label htmlFor='option2'>
+                <label htmlFor='option2-1'>
                   <input
                     type='radio'
                     name='had_vaccine'
-                    id='option2'
+                    id='option2-1'
                     value='არა'
                     {...register('had_vaccine', {
                       onChange: (e) => {
@@ -69,11 +69,11 @@ function Vaccinaton() {
               <p className='font-bold mb-4'>აირჩიე რა ეტაპზე ხარ*</p>
               <div className='ml-6 flex flex-col gap-3'>
                 <div>
-                  <label htmlFor='option1' className='flex align-items'>
+                  <label htmlFor='option1-2' className='flex align-items'>
                     <input
                       type='radio'
                       name='vaccination_stage'
-                      id='option1'
+                      id='option1-2'
                       value='first_dosage_and_registered_on_the_second'
                       {...register('vaccination_stage', {
                         required: true,
@@ -89,11 +89,11 @@ function Vaccinaton() {
                   </label>
                 </div>
                 <div>
-                  <label htmlFor='option2'>
+                  <label htmlFor='option2-2'>
                     <input
                       type='radio'
                       name='vaccination_stage'
-                      id='option2'
+                      id='option2-2'
                       value='fully_vaccinated'
                       {...register('vaccination_stage', {
                         onChange: (e) => {
@@ -108,11 +108,11 @@ function Vaccinaton() {
                   </label>
                 </div>
                 <div>
-                  <label htmlFor='option3'>
+                  <label htmlFor='option3-2'>
                     <input
                       type='radio'
                       name='vaccination_stage'
-                      id='option3'
+                      id='option3-2'
                       value='first_dosage_and_not_registered_yet'
                       {...register('vaccination_stage', {
                         onChange: (e) => {
@@ -127,8 +127,7 @@ function Vaccinaton() {
                   </label>
                 </div>
               </div>
-              {vaccination_stage ===
-                'პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე' && (
+              {vaccination_stage === 'first_dosage_and_not_registered_yet' && (
                 <div className='mt-10 pl-16 w-68 lowercase leading-7'>
                   <p>
                     რომ არ გადადო,
@@ -149,11 +148,11 @@ function Vaccinaton() {
               <p className='font-bold mb-4'>რას ელოდები?*</p>
               <div className='ml-6 flex flex-col gap-3'>
                 <div>
-                  <label htmlFor='option1' className='flex align-items'>
+                  <label htmlFor='option1-3' className='flex align-items'>
                     <input
                       type='radio'
                       name='i_am_waiting'
-                      id='option1'
+                      id='option1-3'
                       value='registered_and_waiting'
                       {...register('i_am_waiting', {
                         required: true,
@@ -166,11 +165,11 @@ function Vaccinaton() {
                   </label>
                 </div>
                 <div>
-                  <label htmlFor='option2'>
+                  <label htmlFor='option2-3'>
                     <input
                       type='radio'
                       name='i_am_waiting'
-                      id='option2'
+                      id='option2-3'
                       value='not_planning'
                       {...register('i_am_waiting', {
                         onChange: (e) => {
@@ -182,11 +181,11 @@ function Vaccinaton() {
                   </label>
                 </div>
                 <div>
-                  <label htmlFor='option3'>
+                  <label htmlFor='option3-3'>
                     <input
                       type='radio'
                       name='i_am_waiting'
-                      id='option3'
+                      id='option3-3'
                       value='had_covid_and_planning_to_be_vaccinated'
                       {...register('i_am_waiting', {
                         onChange: (e) => {
@@ -198,7 +197,7 @@ function Vaccinaton() {
                   </label>
                 </div>
               </div>
-              {i_am_waiting === 'გადატანილი მაქვს და ვგეგმავ აცრას' && (
+              {i_am_waiting === 'had_covid_and_planning_to_be_vaccinated' && (
                 <div className='mt-10 pl-16 w-68 lowercase leading-7'>
                   <p>
                     ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ
