@@ -1,12 +1,23 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { FormDataContext } from '@/context';
 import { instance } from '@/services';
+import { ROUTES } from '@/config';
+import { vaccinationDataExists } from '@/helpers';
 
 function useAdviceInputs() {
   const { formData } = useContext(FormDataContext);
 
   const [showModal, setShowModal] = useState(false);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!vaccinationDataExists()) {
+      navigate(ROUTES.VACCINATION);
+    }
+  }, [navigate]);
 
   const { register, handleSubmit } = useForm({
     defaultValues: {

@@ -26,4 +26,18 @@ function covidDataExists() {
   return Boolean(had_covid && had_antibody_test && covid_sickness_date);
 }
 
-export { identificationDataExists, covidDataExists };
+function vaccinationDataExists() {
+  const had_vaccine = localStorage.getItem('had_vaccine');
+  let vaccination_stage = true;
+  let i_am_waiting = true;
+
+  if (had_vaccine === 'კი') {
+    vaccination_stage = localStorage.getItem('vaccination_stage');
+  } else if (had_vaccine === 'არა') {
+    i_am_waiting = localStorage.getItem('i_am_waiting');
+  }
+
+  return Boolean(had_vaccine && vaccination_stage && i_am_waiting);
+}
+
+export { identificationDataExists, covidDataExists, vaccinationDataExists };
