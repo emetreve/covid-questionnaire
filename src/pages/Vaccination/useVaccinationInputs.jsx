@@ -3,13 +3,16 @@ import { useForm, useWatch } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { FormDataContext } from '@/context';
 import { ROUTES } from '@/config';
-import { covidDataExists } from '@/helpers';
+import { identificationDataExists, covidDataExists } from '@/helpers';
 
 function useCovidInputs() {
   const { updateFormData } = useContext(FormDataContext);
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (!identificationDataExists()) {
+      navigate(ROUTES.IDENTIFICATION);
+    }
     if (!covidDataExists()) {
       navigate(ROUTES.COVID);
     }

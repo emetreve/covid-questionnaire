@@ -4,7 +4,11 @@ import { useForm } from 'react-hook-form';
 import { FormDataContext } from '@/context';
 import { instance } from '@/services';
 import { ROUTES } from '@/config';
-import { vaccinationDataExists } from '@/helpers';
+import {
+  identificationDataExists,
+  covidDataExists,
+  vaccinationDataExists,
+} from '@/helpers';
 
 function useAdviceInputs() {
   const { formData } = useContext(FormDataContext);
@@ -14,6 +18,12 @@ function useAdviceInputs() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (!identificationDataExists()) {
+      navigate(ROUTES.IDENTIFICATION);
+    }
+    if (!covidDataExists()) {
+      navigate(ROUTES.COVID);
+    }
     if (!vaccinationDataExists()) {
       navigate(ROUTES.VACCINATION);
     }
