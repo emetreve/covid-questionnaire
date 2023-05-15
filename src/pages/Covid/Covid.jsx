@@ -15,7 +15,6 @@ function Covid() {
     if (!identificationDataExists()) {
       navigate(ROUTES.IDENTIFICATION);
     }
-    console.log(identificationDataExists());
   }, [navigate]);
 
   const {
