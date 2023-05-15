@@ -97,11 +97,11 @@ const config = {
         },
         '50%': { borderRadius: '50%' },
         '100%': {
-          width: '9rem',
+          width: '17rem',
           borderRadius: '50%',
-          top: '3rem',
-          left: '-4rem',
-          height: '9rem',
+          top: '1rem',
+          left: '-8rem',
+          height: '17rem',
         },
       },
       'star-to-circle': {
@@ -118,6 +118,152 @@ const config = {
           opacity: 0,
         },
       },
+      heart: {
+        '0%': {
+          top: '2rem',
+          left: '10rem',
+          height: '5.25rem',
+          opacity: 0.2,
+        },
+        '100%': {
+          top: '8rem',
+          left: '18rem',
+          height: '11.25rem',
+          opacity: 1,
+        },
+      },
+      'star-to-heart': {
+        '0%': {
+          top: '0rem',
+          left: '11rem',
+          height: '16.25rem',
+          opacity: 1,
+        },
+        '50%': {
+          opacity: ' 0.6',
+        },
+        '100%': {
+          top: '13rem',
+          left: '24rem',
+          height: '1.625rem',
+          opacity: 0,
+        },
+      },
+      'star-back': {
+        '0%': {
+          top: '13rem',
+          left: '6rem',
+          height: '5.25rem',
+          opacity: 0.2,
+        },
+        '100%': {
+          top: '2rem',
+          left: '-6rem',
+          height: '16.25rem',
+          opacity: 1,
+        },
+      },
+      'heart-to-star': {
+        '100%': {
+          top: '1rem',
+          left: '-8rem',
+          height: '15rem',
+          opacity: 0,
+        },
+        '0%': {
+          top: '12rem',
+          left: '10rem',
+          height: '11.25rem',
+          opacity: 1,
+        },
+      },
+      'fade-in': {
+        '0%': {
+          opacity: 0,
+        },
+        '100%': {
+          opacity: 1,
+        },
+      },
+      'heart-zoom': {
+        '0%': {
+          opacity: 1,
+          top: '25rem',
+          left: '80rem',
+          backgroundColor: 'black',
+          filter: 'brightness(50%)',
+        },
+        '100%': {
+          transform: 'scale(34)',
+          opacity: 0,
+          top: '40rem',
+          left: '30rem',
+          backgroundColor: 'black',
+          filter: 'brightness(50%)',
+        },
+      },
+      'thank-you-fade-in': {
+        '0%': {
+          opacity: 0,
+        },
+
+        '25%': {
+          opacity: 0,
+        },
+        '75%': {
+          opacity: 0,
+        },
+        '85%': {
+          opacity: 0.5,
+        },
+        '100%': {
+          opacity: 1,
+        },
+      },
+      'sparkle-top': {
+        '0%': {
+          opacity: 0,
+        },
+
+        '25%': {
+          opacity: 0,
+        },
+        '75%': {
+          opacity: 0,
+          top: '30rem',
+          left: '50rem',
+        },
+        '85%': {
+          opacity: 0.5,
+        },
+        '100%': {
+          opacity: 1,
+          top: '28rem',
+          left: '46rem',
+        },
+      },
+      'sparkle-bottom': {
+        '0%': {
+          opacity: 0,
+        },
+
+        '25%': {
+          opacity: 0,
+        },
+        '75%': {
+          opacity: 0,
+          top: '35rem',
+          right: '52rem',
+        },
+        '85%': {
+          opacity: 0.5,
+        },
+        '100%': {
+          opacity: 1,
+          top: '37rem',
+          right: '49rem',
+        },
+      },
     },
     animation: {
       'dissolve-logo': 'dissolveLandingLogo 0.8s forwards',
@@ -128,6 +274,15 @@ const config = {
       star: 'star 0.9s forwards',
       'circle-to-star': 'circle-to-star 1s backwards',
       'star-to-circle': 'star-to-circle 1s forwards',
+      heart: 'heart 0.9s forwards',
+      'star-to-heart': 'star-to-heart 1s forwards',
+      'star-back': 'star-back 1s forwards',
+      'heart-to-star': 'heart-to-star 1s forwards',
+      'fade-in': 'fade-in 0.7s forwards',
+      'heart-zoom': 'heart-zoom  2s forwards',
+      'thank-you-fade-in': 'thank-you-fade-in 1.9s forwards',
+      'sparkle-top': 'sparkle-top 2.5s forwards',
+      'sparkle-bottom': 'sparkle-bottom 2.5s forwards',
     },
 
     fontFamily: {
@@ -141,6 +296,7 @@ const config = {
         'yellow-eyes': '#D6D16E',
         error: '#F15524',
         turquoise: '#208298',
+        gray: '#232323',
       },
     },
   },
