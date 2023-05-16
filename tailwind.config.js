@@ -104,6 +104,24 @@ const config = {
           height: '17rem',
         },
       },
+      'circle-from-star': {
+        '100%': {
+          backgroundColor: '#DD3939',
+          borderRadius: '50%',
+          left: '-7.5rem',
+          top: '13.75rem',
+          height: '14.313rem',
+          width: '14.313rem',
+        },
+        '50%': { borderRadius: '50%' },
+        '0%': {
+          width: '11rem',
+          borderRadius: '50%',
+          top: '1rem',
+          left: '-8rem',
+          height: '11rem',
+        },
+      },
       'star-to-circle': {
         '0%': {
           top: '2rem',
@@ -283,6 +301,7 @@ const config = {
       'thank-you-fade-in': 'thank-you-fade-in 1.9s forwards',
       'sparkle-top': 'sparkle-top 2.5s forwards',
       'sparkle-bottom': 'sparkle-bottom 2.5s forwards',
+      'circle-from-star': 'circle-from-star 1s forwards',
     },
 
     fontFamily: {

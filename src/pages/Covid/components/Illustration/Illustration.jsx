@@ -6,13 +6,17 @@ function Illustration({ backwards }) {
         alt='guy with high temperature'
         className='scale-[170%] mr-36 pt-28 relative z-10'
       />
-      <div className='absolute animate-circle' />
-      {backwards && (
-        <img
-          src='/assets/star.png'
-          alt='star'
-          className='absolute animate-star-to-circle'
-        />
+      {backwards ? (
+        <>
+          <div className='absolute animate-circle-from-star' />
+          <img
+            src='/assets/star.png'
+            alt='star'
+            className='absolute animate-star-to-circle'
+          />
+        </>
+      ) : (
+        <div className='absolute animate-circle' />
       )}
     </div>
   );
