@@ -205,19 +205,14 @@ const config = {
       },
       'heart-zoom': {
         '0%': {
-          opacity: 1,
           top: '25rem',
-          left: '80rem',
-          backgroundColor: 'black',
-          filter: 'brightness(50%)',
+          left: '84rem',
         },
         '100%': {
-          transform: 'scale(34)',
-          opacity: 0,
+          transform: 'scale(25)',
           top: '40rem',
-          left: '30rem',
-          backgroundColor: 'black',
-          filter: 'brightness(50%)',
+          left: '20rem',
+          fill: 'red',
         },
       },
       'thank-you-fade-in': {
@@ -282,6 +277,14 @@ const config = {
           right: '49rem',
         },
       },
+      'heart-color': {
+        '0%': {
+          fill: '#F39494',
+        },
+        '100%': {
+          fill: '#232323',
+        },
+      },
     },
     animation: {
       'dissolve-logo': 'dissolveLandingLogo 0.8s forwards',
@@ -302,6 +305,7 @@ const config = {
       'sparkle-top': 'sparkle-top 2.5s forwards',
       'sparkle-bottom': 'sparkle-bottom 2.5s forwards',
       'circle-from-star': 'circle-from-star 1s forwards',
+      'heart-color': 'heart-color 1.5s forwards',
     },
 
     fontFamily: {
