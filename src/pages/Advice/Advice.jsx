@@ -1,12 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-import { FormTracker } from '@/components';
+import { FormTracker, Error } from '@/components';
 import { ROUTES } from '@/config';
 import useAdviceInputs from './useAdviceInputs';
 import { Illustration } from './components';
 import { Modal } from './components';
 
 function Advice() {
-  const { handleSubmit, register, onSubmit, showModal } = useAdviceInputs();
+  const { handleSubmit, register, onSubmit, showModal, errors } =
+    useAdviceInputs();
 
   const navigate = useNavigate();
 
@@ -39,14 +40,14 @@ function Advice() {
               </p>
               <div className='ml-6 '>
                 <div className='flex items-center mb-[1.25rem]'>
-                  <label htmlFor='option1'>
+                  <label htmlFor='option1-1'>
                     <input
                       type='radio'
                       name='non_formal_meetings'
-                      id='option1'
+                      id='option1-1'
                       value='twice_a_week'
                       {...register('non_formal_meetings', {
-                        required: true,
+                        required: 'ველი სავალდებულოა',
                         onChange: (e) => {
                           localStorage.setItem(
                             'non_formal_meetings',
@@ -59,11 +60,11 @@ function Advice() {
                   </label>
                 </div>
                 <div className='flex items-center mb-[1.25rem]'>
-                  <label htmlFor='option2'>
+                  <label htmlFor='option2-1'>
                     <input
                       type='radio'
                       name='non_formal_meetings'
-                      id='option2'
+                      id='option2-1'
                       value='once_a_week'
                       {...register('non_formal_meetings', {
                         onChange: (e) => {
@@ -78,11 +79,11 @@ function Advice() {
                   </label>
                 </div>
                 <div className='flex items-center mb-[1.25rem]'>
-                  <label htmlFor='option3'>
+                  <label htmlFor='option3-1'>
                     <input
                       type='radio'
                       name='non_formal_meetings'
-                      id='option3'
+                      id='option3-1'
                       value='once_in_a_two_weeks'
                       {...register('non_formal_meetings', {
                         onChange: (e) => {
@@ -97,11 +98,11 @@ function Advice() {
                   </label>
                 </div>
                 <div className='flex items-center mb-[1.25rem]'>
-                  <label htmlFor='option4'>
+                  <label htmlFor='option4-1'>
                     <input
                       type='radio'
                       name='non_formal_meetings'
-                      id='option4'
+                      id='option4-1'
                       value='once_in_a_month'
                       {...register('non_formal_meetings', {
                         onChange: (e) => {
@@ -116,21 +117,26 @@ function Advice() {
                   </label>
                 </div>
               </div>
+              <div className='h-4'>
+                {errors?.non_formal_meetings && (
+                  <Error content={errors.non_formal_meetings.message} />
+                )}
+              </div>
             </div>
             <div className='text-[1.4em] pt-10 mb-10'>
               <p className='font-bold mb-4'>
                 კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*
               </p>
-              <div className='ml-6 '>
+              <div className='ml-6'>
                 <div className='flex items-center mb-[1.25rem]'>
-                  <label htmlFor='option1'>
+                  <label htmlFor='option1-2'>
                     <input
                       type='radio'
                       name='number_of_days_from_office'
-                      id='option1'
+                      id='option1-2'
                       value='0'
                       {...register('number_of_days_from_office', {
-                        required: true,
+                        required: 'ველი სავალდებულოა',
                         onChange: (e) => {
                           localStorage.setItem(
                             'number_of_days_from_office',
@@ -143,11 +149,11 @@ function Advice() {
                   </label>
                 </div>
                 <div className='flex items-center mb-[1.25rem]'>
-                  <label htmlFor='option2'>
+                  <label htmlFor='option2-2'>
                     <input
                       type='radio'
                       name='number_of_days_from_office'
-                      id='option2'
+                      id='option2-2'
                       value='1'
                       {...register('number_of_days_from_office', {
                         onChange: (e) => {
@@ -162,11 +168,11 @@ function Advice() {
                   </label>
                 </div>
                 <div className='flex items-center mb-[1.25rem]'>
-                  <label htmlFor='option3'>
+                  <label htmlFor='option3-2'>
                     <input
                       type='radio'
                       name='number_of_days_from_office'
-                      id='option3'
+                      id='option3-2'
                       value='2'
                       {...register('number_of_days_from_office', {
                         onChange: (e) => {
@@ -181,11 +187,11 @@ function Advice() {
                   </label>
                 </div>
                 <div className='flex items-center mb-[1.25rem]'>
-                  <label htmlFor='option4'>
+                  <label htmlFor='option4-2'>
                     <input
                       type='radio'
                       name='number_of_days_from_office'
-                      id='option4'
+                      id='option4-2'
                       value='3'
                       {...register('number_of_days_from_office', {
                         onChange: (e) => {
@@ -200,11 +206,11 @@ function Advice() {
                   </label>
                 </div>
                 <div className='flex items-center mb-[1.25rem]'>
-                  <label htmlFor='option5'>
+                  <label htmlFor='option5-2'>
                     <input
                       type='radio'
                       name='number_of_days_from_office'
-                      id='option5'
+                      id='option5-2'
                       value='4'
                       {...register('number_of_days_from_office', {
                         onChange: (e) => {
@@ -219,11 +225,11 @@ function Advice() {
                   </label>
                 </div>
                 <div className='flex items-center mb-[1.25rem]'>
-                  <label htmlFor='option6'>
+                  <label htmlFor='option6-2'>
                     <input
                       type='radio'
                       name='number_of_days_from_office'
-                      id='option6'
+                      id='option6-2'
                       value='5'
                       {...register('number_of_days_from_office', {
                         onChange: (e) => {
@@ -238,12 +244,16 @@ function Advice() {
                   </label>
                 </div>
               </div>
+              <div className='h-4'>
+                {errors?.number_of_days_from_office && (
+                  <Error content={errors.number_of_days_from_office.message} />
+                )}
+              </div>
             </div>
             <div className='text-[1.4em] pt-8 mb-10'>
               <p className='font-bold mb-4'>რას ფიქრობ ფიზიკურ შეკრებებზე?*</p>
               <textarea
                 {...register('what_about_meetings_in_live', {
-                  required: true,
                   onChange: (e) => {
                     localStorage.setItem(
                       'what_about_meetings_in_live',
@@ -261,7 +271,6 @@ function Advice() {
               </div>
               <textarea
                 {...register('tell_us_your_opinion_about_us', {
-                  required: true,
                   onChange: (e) => {
                     localStorage.setItem(
                       'tell_us_your_opinion_about_us',

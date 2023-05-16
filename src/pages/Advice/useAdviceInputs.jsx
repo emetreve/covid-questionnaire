@@ -1,14 +1,39 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { FormDataContext } from '@/context';
 import { instance } from '@/services';
+import { ROUTES } from '@/config';
+import {
+  identificationDataExists,
+  covidDataExists,
+  vaccinationDataExists,
+} from '@/helpers';
 
 function useAdviceInputs() {
-  const { updateFormData, formData } = useContext(FormDataContext);
+  const { formData } = useContext(FormDataContext);
 
   const [showModal, setShowModal] = useState(false);
 
-  const { register, handleSubmit } = useForm({
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!identificationDataExists()) {
+      navigate(ROUTES.IDENTIFICATION);
+    }
+    if (!covidDataExists()) {
+      navigate(ROUTES.COVID);
+    }
+    if (!vaccinationDataExists()) {
+      navigate(ROUTES.VACCINATION);
+    }
+  }, [navigate]);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
     defaultValues: {
       non_formal_meetings: localStorage.getItem('non_formal_meetings') || '',
       number_of_days_from_office:
@@ -22,9 +47,14 @@ function useAdviceInputs() {
   });
 
   const onSubmit = async (data) => {
-    updateFormData(data);
-
-    const contextData = { ...formData };
+    const contextData = {
+      ...formData,
+      ...data,
+      antibodies: {
+        number: formData.antibodies.number,
+        test_date: formData.antibodies.test_date,
+      },
+    };
 
     Object.entries(contextData).forEach(([key, value]) => {
       if (value === '') {
@@ -74,6 +104,7 @@ function useAdviceInputs() {
     register,
     onSubmit,
     showModal,
+    errors,
   };
 }
 
