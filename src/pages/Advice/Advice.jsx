@@ -34,7 +34,7 @@ function Advice() {
               </p>
             </div>
             <div className='text-[1.4em] pt-12 mb-10'>
-              <p className='font-bold mb-4'>
+              <p className='font-bold mb-4 font-helvetica-bold'>
                 რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ
                 შეხვედრები, სადაც ყველა სურვილისამებრ ჩაერთვება?*
               </p>
@@ -124,7 +124,7 @@ function Advice() {
               </div>
             </div>
             <div className='text-[1.4em] pt-10 mb-10'>
-              <p className='font-bold mb-4'>
+              <p className='font-bold mb-4 font-helvetica-bold'>
                 კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*
               </p>
               <div className='ml-6'>
@@ -251,7 +251,9 @@ function Advice() {
               </div>
             </div>
             <div className='text-[1.4em] pt-8 mb-10'>
-              <p className='font-bold mb-4'>რას ფიქრობ ფიზიკურ შეკრებებზე?*</p>
+              <p className='font-bold mb-4 font-helvetica-bold'>
+                რას ფიქრობ ფიზიკურ შეკრებებზე?*
+              </p>
               <textarea
                 {...register('what_about_meetings_in_live', {
                   onChange: (e) => {
@@ -265,7 +267,7 @@ function Advice() {
               ></textarea>
             </div>
             <div className='text-[1.4em] pt-5 mb-10'>
-              <div className='font-bold mb-5'>
+              <div className='font-bold mb-5 font-helvetica-bold'>
                 <p>რას ფიქრობ არსებულ გარემოზე:</p>
                 <p>რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?*</p>
               </div>

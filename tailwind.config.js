@@ -256,8 +256,8 @@ const config = {
         },
         '100%': {
           opacity: 1,
-          top: '28rem',
-          left: '46rem',
+          top: '27rem',
+          left: '45rem',
         },
       },
       'sparkle-bottom': {
@@ -307,6 +307,8 @@ const config = {
     fontFamily: {
       BpgArial: ['BpgArial', 'sans-serif'],
       anonymousPro: ['Anonymous Pro'],
+      'helvetica-cap': ['Helvetica Neue Cap'],
+      'helvetica-bold': ['Helvetica Neue Bold'],
     },
     extend: {
       colors: {

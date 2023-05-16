@@ -9,12 +9,16 @@
 }
 
 @font-face {
-    font-family: 'Helvetica Neue';
+    font-family: 'Helvetica Neue Cap';
     src: url('./fonts/HelveticaNeueLTGEOCaps-55Roman.ttf');
+}
+@font-face {
+    font-family: 'helvetica-bold';
+    src: url('./fonts/Helvetica-Neue-LT-GEO-75-Bold.ttf');
 }
 
 .custom-shadow {
-    font-family: 'Helvetica Neue';
+    font-family: 'Helvetica Neue Cap';
 }
 
 .custom-shadow:hover {
@@ -39,15 +43,14 @@ input:focus {
 }
 
 .submit {
-    font-family: 'Helvetica Neue';
+    font-family: 'Helvetica Neue Cap';
     font-size: 1.625rem;
 }
 
 .thankyou{
-    font-family: 'Helvetica Neue';
+    font-family: 'Helvetica Neue Cap';
     font-size: 5.625rem;
     letter-spacing: 1.2rem;
-
 }
 
 .scrollbar-hide::-webkit-scrollbar {
