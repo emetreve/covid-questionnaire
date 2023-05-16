@@ -307,8 +307,8 @@ const config = {
     fontFamily: {
       BpgArial: ['BpgArial', 'sans-serif'],
       anonymousPro: ['Anonymous Pro'],
-      'helvetica-cap': ['Helvetica Neue Cap'],
-      'helvetica-bold': ['Helvetica Neue Bold'],
+      'helvetica-cap': ['helvetica-cap'],
+      'helvetica-bold': ['helvetica-bold'],
     },
     extend: {
       colors: {

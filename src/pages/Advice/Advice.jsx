@@ -286,7 +286,7 @@ function Advice() {
             <div className='relative w-[41.5rem] pt-11'>
               <button
                 type='submit'
-                className='absolute right-0 py-3 px-8 bg-turquoise tracking-wide text-white font-bold border rounded-[42px] submit'
+                className='font-helvetica-cap text-[1.325rem] absolute right-0 py-3 px-8 bg-turquoise tracking-wide text-white font-bold border rounded-[42px] submit'
               >
                 დასრულება
               </button>
