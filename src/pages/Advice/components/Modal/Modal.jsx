@@ -7,7 +7,7 @@ function Modal() {
           alt='sparkle'
           className='h-14 animate-sparkle-top absolute z-50'
         />
-        <h1 className='text-[5.625rem] font-helvetica-cap tracking-[1rem] text-white thankyou animate-thank-you-fade-in'>
+        <h1 className='text-[5rem] font-helvetica-cap tracking-[1rem] text-white thankyou animate-thank-you-fade-in'>
           მადლობა
         </h1>
         <img
