@@ -5,12 +5,12 @@
 @font-face {
     font-family: BpgArial;
     font-weight: normal;
-    src: url("./fonts/BpgArial.ttf") format("TTF");
+    src: url("./fonts/BpgArial.ttf");
 }
 
 @font-face {
     font-family: 'Helvetica Neue';
-    src: url('./fonts/HelveticaNeueLTGEOCaps-55Roman.ttf') format("TTF");
+    src: url('./fonts/HelveticaNeueLTGEOCaps-55Roman.ttf');
 }
 
 .custom-shadow {
