@@ -118,7 +118,7 @@ const config = {
           width: '11rem',
           borderRadius: '50%',
           top: '1rem',
-          left: '-8rem',
+          left: '-3rem',
           height: '11rem',
         },
       },
