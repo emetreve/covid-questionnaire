@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { FormDataContext } from '@/context';
 import { instance } from '@/services';
@@ -17,17 +17,21 @@ function useAdviceInputs() {
 
   const navigate = useNavigate();
 
+  const { success } = useLocation();
+
   useEffect(() => {
-    if (!identificationDataExists()) {
-      navigate(ROUTES.IDENTIFICATION);
+    if (!success) {
+      if (!identificationDataExists()) {
+        navigate(ROUTES.IDENTIFICATION);
+      }
+      if (!covidDataExists()) {
+        navigate(ROUTES.COVID);
+      }
+      if (!vaccinationDataExists()) {
+        navigate(ROUTES.VACCINATION);
+      }
     }
-    if (!covidDataExists()) {
-      navigate(ROUTES.COVID);
-    }
-    if (!vaccinationDataExists()) {
-      navigate(ROUTES.VACCINATION);
-    }
-  }, [navigate]);
+  }, [navigate, success]);
 
   const {
     register,
@@ -92,7 +96,11 @@ function useAdviceInputs() {
     try {
       const response = await instance.post('/create', contextData);
       if (response.status === 201) {
+        navigate(ROUTES.ADVICE, {
+          success: { status: true },
+        });
         setShowModal((prev) => !prev);
+        localStorage.clear();
       }
     } catch (error) {
       console.log(error);
