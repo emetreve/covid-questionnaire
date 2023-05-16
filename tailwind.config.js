@@ -297,6 +297,7 @@ const config = {
         error: '#F15524',
         turquoise: '#208298',
         gray: '#232323',
+        'gray-input': 'rgba(35, 35, 35, 0.7)',
       },
     },
   },

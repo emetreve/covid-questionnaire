@@ -36,7 +36,7 @@ function Identification() {
               })}
               id='first_name'
               placeholder='იოსებ'
-              className='text-xl bg-transparent block pt-2 border border-black py-3 px-5 text-s w-full placeholder-black font-light'
+              className='text-xl bg-transparent block pt-2 border border-gray-input py-3 px-5 text-s w-full placeholder-black font-light'
             />
             <div className='h-4'>
               {errors?.first_name && (
@@ -62,7 +62,7 @@ function Identification() {
               })}
               id='last_name'
               placeholder='ჯუღაშვილი'
-              className='text-xl bg-transparent block pt-2 border border-black py-3 px-5 text-s w-full placeholder-black font-light'
+              className='text-xl bg-transparent block pt-2 border border-gray-input py-3 px-5 text-s w-full placeholder-black font-light'
             />
             <div className='h-4'>
               {errors?.last_name && (
@@ -88,7 +88,7 @@ function Identification() {
               })}
               id='email'
               placeholder='fbi@redberry.ge'
-              className='text-xl bg-transparent block pt-2 border border-black py-3 px-5 text-s w-full placeholder-black font-light'
+              className='text-xl bg-transparent block pt-2 border border-gray-input py-3 px-5 text-s w-full placeholder-black font-light'
             />
             <div className='h-4'>
               {errors?.email && <Error content={errors.email.message} />}
