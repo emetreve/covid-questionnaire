@@ -212,7 +212,6 @@ const config = {
           transform: 'scale(25)',
           top: '40rem',
           left: '20rem',
-          fill: 'red',
         },
       },
       'thank-you-fade-in': {
