@@ -104,6 +104,24 @@ const config = {
           height: '17rem',
         },
       },
+      'circle-from-star': {
+        '100%': {
+          backgroundColor: '#DD3939',
+          borderRadius: '50%',
+          left: '-7.5rem',
+          top: '13.75rem',
+          height: '14.313rem',
+          width: '14.313rem',
+        },
+        '50%': { borderRadius: '50%' },
+        '0%': {
+          width: '11rem',
+          borderRadius: '50%',
+          top: '1rem',
+          left: '-3rem',
+          height: '11rem',
+        },
+      },
       'star-to-circle': {
         '0%': {
           top: '2rem',
@@ -187,19 +205,14 @@ const config = {
       },
       'heart-zoom': {
         '0%': {
-          opacity: 1,
           top: '25rem',
-          left: '80rem',
-          backgroundColor: 'black',
-          filter: 'brightness(50%)',
+          left: '84rem',
         },
         '100%': {
-          transform: 'scale(34)',
-          opacity: 0,
+          transform: 'scale(25)',
           top: '40rem',
-          left: '30rem',
-          backgroundColor: 'black',
-          filter: 'brightness(50%)',
+          left: '20rem',
+          fill: 'red',
         },
       },
       'thank-you-fade-in': {
@@ -238,8 +251,8 @@ const config = {
         },
         '100%': {
           opacity: 1,
-          top: '28rem',
-          left: '46rem',
+          top: '27rem',
+          left: '45rem',
         },
       },
       'sparkle-bottom': {
@@ -264,6 +277,14 @@ const config = {
           right: '49rem',
         },
       },
+      'heart-color': {
+        '0%': {
+          fill: '#F39494',
+        },
+        '100%': {
+          fill: '#232323',
+        },
+      },
     },
     animation: {
       'dissolve-logo': 'dissolveLandingLogo 0.8s forwards',
@@ -283,11 +304,15 @@ const config = {
       'thank-you-fade-in': 'thank-you-fade-in 1.9s forwards',
       'sparkle-top': 'sparkle-top 2.5s forwards',
       'sparkle-bottom': 'sparkle-bottom 2.5s forwards',
+      'circle-from-star': 'circle-from-star 1s forwards',
+      'heart-color': 'heart-color 1.5s forwards',
     },
 
     fontFamily: {
       BpgArial: ['BpgArial', 'sans-serif'],
       anonymousPro: ['Anonymous Pro'],
+      'helvetica-cap': ['helvetica-cap'],
+      'helvetica-bold': ['helvetica-bold'],
     },
     extend: {
       colors: {
@@ -297,6 +322,7 @@ const config = {
         error: '#F15524',
         turquoise: '#208298',
         gray: '#232323',
+        'gray-input': 'rgba(35, 35, 35, 0.7)',
       },
     },
   },

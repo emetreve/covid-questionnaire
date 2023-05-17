@@ -28,7 +28,9 @@ function Vaccinaton() {
           className='w-[43rem] pt-3'
         >
           <div className='text-[1.4em] pt-10 mb-10'>
-            <p className='font-bold mb-4'>უკვე აცრილი ხარ?* </p>
+            <p className='font-bold mb-4 font-helvetica-bold'>
+              უკვე აცრილი ხარ?*
+            </p>
             <div className='ml-6 '>
               <div className='flex items-center mb-[1.25rem]'>
                 <label htmlFor='option1-1'>
@@ -72,7 +74,9 @@ function Vaccinaton() {
           </div>
           {had_vaccine === 'კი' && (
             <div className='text-[1.4em]'>
-              <p className='font-bold mb-4'>აირჩიე რა ეტაპზე ხარ*</p>
+              <p className='font-bold mb-4 font-helvetica-bold'>
+                აირჩიე რა ეტაპზე ხარ*
+              </p>
               <div className='ml-6 flex flex-col gap-3'>
                 <div>
                   <label htmlFor='option1-2' className='flex align-items'>
@@ -156,7 +160,9 @@ function Vaccinaton() {
           )}
           {had_vaccine === 'არა' && (
             <div className='text-[1.4em]'>
-              <p className='font-bold mb-4'>რას ელოდები?*</p>
+              <p className='font-bold mb-4 font-helvetica-bold'>
+                რას ელოდები?*
+              </p>
               <div className='ml-6 flex flex-col gap-3'>
                 <div>
                   <label htmlFor='option1-3' className='flex align-items'>

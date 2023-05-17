@@ -2,21 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    @font-face {
-        font-family: BpgArial;
-        font-weight: normal;
-        src: url("/assets/fonts/BpgArial.ttf") format("TTF");
-    }
+@font-face {
+    font-family: BpgArial;
+    font-weight: normal;
+    src: url("./fonts/BpgArial.ttf");
 }
 
-.custom-shadow {
-    letter-spacing: 0.0625rem;
-    font-variant-caps: all-petite-caps;
+@font-face {
+    font-family: 'helvetica-cap';
+    src: url('./fonts/HelveticaNeueLTGEOCaps-55Roman.ttf');
+}
+@font-face {
+    font-family: 'helvetica-bold';
+    src: url('./fonts/Helvetica-Neue-LT-GEO-75-Bold.ttf');
 }
 
 .custom-shadow:hover {
-    text-shadow: 0.125rem 0.07rem 0.0625rem #FAF9F6, 0.1875rem 0.0625rem 0.0625rem black;
+    text-shadow: 0.125rem 0.07rem 0.09rem #FAF9F6, 0.2rem 0.0625rem 0.0625rem black;
 }
 
 input[type='radio'] {
@@ -28,20 +30,12 @@ input[type='radio'] {
     accent-color: #232323;
 }
 
+input:focus {
+    outline: none;
+}
+
 .inverse{
     animation-direction: reverse;
-}
-
-.submit {
-    font-variant-caps: all-petite-caps;
-    font-size: 1.625rem;
-}
-
-.thankyou{
-    font-variant-caps: all-petite-caps;
-    font-size: 5.625rem;
-    letter-spacing: 1.2rem;
-
 }
 
 .scrollbar-hide::-webkit-scrollbar {

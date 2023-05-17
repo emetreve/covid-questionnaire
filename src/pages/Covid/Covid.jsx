@@ -27,7 +27,11 @@ function Covid() {
           className='w-[39rem] pt-3'
         >
           <div className='text-[1.4em]'>
-            <p className='font-bold mb-4'>გაქვს გადატანილი Covid-19?*</p>
+            <b>
+              <p className='mb-4 font-helvetica-bold'>
+                გაქვს გადატანილი Covid-19?*
+              </p>
+            </b>
             <div className='ml-6 flex flex-col gap-3'>
               <div>
                 <label htmlFor='option1-1' className='flex align-items'>
@@ -87,7 +91,7 @@ function Covid() {
           </div>
           {had_covid === 'yes' && (
             <div className='text-[1.4em] pt-10'>
-              <p className='font-bold mb-4'>
+              <p className='font-bold mb-4 font-helvetica-bold'>
                 ანტისხეულების ტესტი გაქვს გაკეთებული?*
               </p>
               <div className='ml-6 '>
@@ -140,7 +144,7 @@ function Covid() {
           )}
           {had_antibody_test === 'კი' && had_covid === 'yes' && (
             <div className='text-[1.4em] pt-6'>
-              <p className='font-bold mb-4'>
+              <p className='font-bold mb-4 font-helvetica-bold'>
                 თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და
                 ანტისხეულების რაოდენობა
               </p>
@@ -177,7 +181,7 @@ function Covid() {
           )}
           {had_antibody_test === 'არა' && had_covid === 'yes' && (
             <div className='text-[1.4em] pt-6'>
-              <p className='font-bold mb-4'>
+              <p className='font-bold mb-4 font-helvetica-bold'>
                 მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა
                 Covid-19*
               </p>

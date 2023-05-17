@@ -13,6 +13,7 @@ function useIdentificationInputs() {
     handleSubmit,
     formState: { errors },
     trigger,
+    reset,
   } = useForm({
     defaultValues: {
       first_name: localStorage.getItem('first_name') || '',
